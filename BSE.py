@@ -49,6 +49,7 @@
 import sys
 import math
 import random
+import PySimpleGUI as sg
 
 bse_sys_minprice = 1  # minimum price in the system, in cents/pennies
 bse_sys_maxprice = 1000  # maximum price in the system, in cents/pennies
@@ -1916,6 +1917,37 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
 
 if __name__ == "__main__":
 
+    
+
+    layout = [
+        [sg.Text("Customise parameters below")],
+        [sg.Text("GNWY count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-GNWY-", tooltip="Enter the number of GNWY traders you want")],
+        [sg.Text("SHVR count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
+        [sg.Text("ZIC count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-ZIC-", tooltip="Enter the number of ZIC traders you want")],
+        [sg.Text("ZIP count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-ZIP-", tooltip="Enter the number of ZIP traders you want")],
+        [sg.Button("Done")]
+
+    ]
+
+    window = sg.Window("Bristol Stock Exchange - Salman Chishti", layout)
+    # sg.Window(title="Bristol Stock Exchange - Salman Chishti", layout=[[]], margins=(400,200)).read()
+
+    while True:
+        event, values = window.read()
+        if event == "Done" or event == sg.WIN_CLOSED:
+            # gnwy = 
+            break
+    window.close()
+
+    GNWY = int(values['-GNWY-'])
+    SHVR = int(values['-SHVR-'])
+    ZIC = int(values['-ZIC-'])
+    ZIP = int(values['-ZIP-'])
+    print(f'GNWY: {GNWY}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
     # set up common parameters for all market sessions
     start_time = 0.0
     end_time = 600.0
@@ -1963,8 +1995,8 @@ if __name__ == "__main__":
     # Use 'periodic' if you want the traders' assignments to all arrive simultaneously & periodically
     #               'interval': 30, 'timemode': 'periodic'}
 
-    buyers_spec = [('GVWY',10),('SHVR',10),('ZIC',10),('ZIP',10)]
-    sellers_spec = [('GVWY',10),('SHVR',10),('ZIC',10),('ZIP',10)]
+    buyers_spec = [('GVWY',GNWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+    sellers_spec = [('GVWY',GNWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
 
     traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
 
