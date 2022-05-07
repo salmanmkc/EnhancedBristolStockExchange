@@ -1995,6 +1995,7 @@ if __name__ == "__main__":
     # Use 'periodic' if you want the traders' assignments to all arrive simultaneously & periodically
     #               'interval': 30, 'timemode': 'periodic'}
 
+    # using the input variables
     buyers_spec = [('GVWY',GNWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
     sellers_spec = [('GVWY',GNWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
 
