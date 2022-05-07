@@ -1945,11 +1945,14 @@ if __name__ == "__main__":
 
     while True:
         event, values = window.read()
-        if event == "Done" or event == sg.WIN_CLOSED:
+        if event == "Done":
+            startapp()
+        if event == sg.WIN_CLOSED:
             # gnwy = 
             break
     window.close()
 
+def startapp():
     GNWY = int(values['-GNWY-'])
     SHVR = int(values['-SHVR-'])
     ZIC = int(values['-ZIC-'])
