@@ -1929,6 +1929,10 @@ if __name__ == "__main__":
         [sg.Input(size=(25,1), enable_events=True, key="-ZIC-", tooltip="Enter the number of ZIC traders you want")],
         [sg.Text("ZIP count")],
         [sg.Input(size=(25,1), enable_events=True, key="-ZIP-", tooltip="Enter the number of ZIP traders you want")],
+        [sg.Text("Input Trials")],
+        [sg.Input(size=(25,1), enable_events=True, key="-inputTrials-", tooltip="Enter the number of Trials you want")],
+        [sg.Text("Input Trials Recorded")],
+        [sg.Input(size=(25,1), enable_events=True, key="-inputTrialsRecorded-", tooltip="Enter the number of Trials recorded you want")],
         [sg.Button("Done")]
 
     ]
@@ -1947,6 +1951,8 @@ if __name__ == "__main__":
     SHVR = int(values['-SHVR-'])
     ZIC = int(values['-ZIC-'])
     ZIP = int(values['-ZIP-'])
+    inputTrials = int(values['-inputTrials-'])
+    inputTrialsRecorded = int(values['-inputTrialsRecorded-'])
     print(f'GNWY: {GNWY}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
     # set up common parameters for all market sessions
     start_time = 0.0
@@ -2006,10 +2012,10 @@ if __name__ == "__main__":
     verbose = True
 
     # n_trials is how many trials (i.e. market sessions) to run in total
-    n_trials = 6
+    n_trials = inputTrials
 
     # n_recorded is how many trials (i.e. market sessions) to write full data-files for
-    n_trials_recorded = 3
+    n_trials_recorded = inputTrialsRecorded
 
     tdump=open('avg_balance.csv','w')
 
