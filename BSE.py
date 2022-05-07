@@ -150,12 +150,15 @@ class Orderbook_half:
 
         n_orders = self.n_orders
         self.orders[order.tid] = order
+        print(f'Order {order.otype}, Price: {order.price}, QID: {order.qid}, Qty {order.qty}, Qid {order.qid}, Time {order.time}')
         self.n_orders = len(self.orders)
         self.build_lob()
         # print('book_add < %s %s' % (order, self.orders))
         if n_orders != self.n_orders:
+            print('Addition')
             return 'Addition'
         else:
+            print('Overwrite')
             return 'Overwrite'
 
     def book_del(self, order):
