@@ -2090,7 +2090,7 @@ if __name__ == "__main__":
 
     # n_trials is how many trials (i.e. market sessions) to run in total
     # n_trials = inputTrials
-    n_trials = GNWY
+    n_trials = 1
     # n_recorded is how many trials (i.e. market sessions) to write full data-files for
     # n_trials_recorded = inputTrialsRecorded
     n_trials_recorded = 1
