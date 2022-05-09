@@ -572,14 +572,14 @@ class Trader_Shaver(Trader):
             otype = self.orders[0].otype
             if otype == 'Bid':
                 if lob['bids']['n'] > 0:
-                    quoteprice = lob['bids']['best'] + 1
+                    quoteprice = lob['bids']['best'] + 0.001
                     if quoteprice > limitprice:
                         quoteprice = limitprice
                 else:
                     quoteprice = lob['bids']['worst']
             else:
                 if lob['asks']['n'] > 0:
-                    quoteprice = lob['asks']['best'] - 1
+                    quoteprice = lob['asks']['best'] - 0.001
                     if quoteprice < limitprice:
                         quoteprice = limitprice
                 else:
