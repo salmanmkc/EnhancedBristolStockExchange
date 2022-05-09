@@ -493,6 +493,48 @@ class Trader_ZIC(Trader):
         return order
 
 
+# gradient is the steepness of the line
+# calculate every entry
+# positive is up
+# negative is down
+# take the curernt time times the gradient to be the bid
+class Trader_Avg_Min_Max_Gradient(Trader):
+
+    historyMin = []
+    historyMax = []
+    currentMinGradient = 0
+    currentMaxGradient = 0
+    def getorder(self, time, countdown, lob):
+        if len(self.orders) < 1:
+            # no orders: return NULL
+            order = None
+        else:
+            minprice = lob['bids']['worst']
+            # add current min to list of mins
+            historyMin.append(minprice)
+            if len(historyMin) > 1:
+                currentMinGradient = historyMin[len(historyMin)-1] / historyMin[0]
+            maxprice = lob['asks']['worst']
+            # add current max to list of maxs
+            historyMax.append(maxprice)
+            if len(historyMax) > 1:
+                # calculate the gradient
+                currentMaxGradient = historyMax[len(historyMax)-1] / historyMax[0]
+            qid = lob['QID']
+            limit = self.orders[0].price
+            otype = self.orders[0].otype
+            if otype == 'Bid':
+                # quoteprice = random.randint(minprice, limit)
+                quoteprice = self.orders[0].time * currentMinGradient
+            else:
+                # quoteprice = random.randint(limit, maxprice)
+                quoteprice = self.orders[0].time * currentMaxGradient
+                # NB should check it == 'Ask' and barf if not
+            order = Order(self.tid, otype, quoteprice, self.orders[0].qty, time, qid)
+            self.lastquote = order
+        return order
+
+
 # Trader subclass Shaver
 # shaves a penny off the best price
 # if there is no best price, creates "stub quote" at system max/min
@@ -530,8 +572,8 @@ class Trader_Shaver(Trader):
 class Trader_Sniper(Trader):
 
     def getorder(self, time, countdown, lob):
-        lurk_threshold = 0.2
-        shavegrowthrate = 3
+        lurk_threshold = 0.5
+        shavegrowthrate = 30
         shave = int(1.0 / (0.01 + countdown / (shavegrowthrate * lurk_threshold)))
         if (len(self.orders) < 1) or (countdown > lurk_threshold):
             order = None
@@ -1554,6 +1596,7 @@ def populate_market(traders_spec, traders, shuffle, verbose):
             return Trader_Shaver('SHVR', name, 0.00, 0)
         elif robottype == 'SNPR':
             return Trader_Sniper('SNPR', name, 0.00, 0)
+            # return Trader_Avg_Min_Max_Gradient('SNPR', name, 0.00, 0)
         elif robottype == 'ZIP':
             return Trader_ZIP('ZIP', name, 0.00, 0)
         elif robottype == 'PRZI':
@@ -1922,44 +1965,44 @@ if __name__ == "__main__":
 
     
 
-    layout = [
-        [sg.Text("Customise parameters below")],
-        [sg.Text("GNWY count")],
-        [sg.Input(size=(25,1), enable_events=True, key="-GNWY-", tooltip="Enter the number of GNWY traders you want")],
-        [sg.Text("SHVR count")],
-        [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
-        [sg.Text("ZIC count")],
-        [sg.Input(size=(25,1), enable_events=True, key="-ZIC-", tooltip="Enter the number of ZIC traders you want")],
-        [sg.Text("ZIP count")],
-        [sg.Input(size=(25,1), enable_events=True, key="-ZIP-", tooltip="Enter the number of ZIP traders you want")],
-        [sg.Text("Input Trials")],
-        [sg.Input(size=(25,1), enable_events=True, key="-inputTrials-", tooltip="Enter the number of Trials you want")],
-        [sg.Text("Input Trials Recorded")],
-        [sg.Input(size=(25,1), enable_events=True, key="-inputTrialsRecorded-", tooltip="Enter the number of Trials recorded you want")],
-        [sg.Button("Done")]
+#     layout = [
+#         [sg.Text("Customise parameters below")],
+#         [sg.Text("GNWY count")],
+#         [sg.Input(size=(25,1), enable_events=True, key="-GNWY-", tooltip="Enter the number of GNWY traders you want")],
+#         [sg.Text("SHVR count")],
+#         [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
+#         [sg.Text("ZIC count")],
+#         [sg.Input(size=(25,1), enable_events=True, key="-ZIC-", tooltip="Enter the number of ZIC traders you want")],
+#         [sg.Text("ZIP count")],
+#         [sg.Input(size=(25,1), enable_events=True, key="-ZIP-", tooltip="Enter the number of ZIP traders you want")],
+#         [sg.Text("Input Trials")],
+#         [sg.Input(size=(25,1), enable_events=True, key="-inputTrials-", tooltip="Enter the number of Trials you want")],
+#         [sg.Text("Input Trials Recorded")],
+#         [sg.Input(size=(25,1), enable_events=True, key="-inputTrialsRecorded-", tooltip="Enter the number of Trials recorded you want")],
+#         [sg.Button("Done")]
 
-    ]
+#     ]
 
-    window = sg.Window("Bristol Stock Exchange - Salman Chishti", layout)
-    # sg.Window(title="Bristol Stock Exchange - Salman Chishti", layout=[[]], margins=(400,200)).read()
+#     window = sg.Window("Bristol Stock Exchange - Salman Chishti", layout)
+#     # sg.Window(title="Bristol Stock Exchange - Salman Chishti", layout=[[]], margins=(400,200)).read()
 
-    while True:
-        event, values = window.read()
-        if event == "Done":
-            startapp()
-        if event == sg.WIN_CLOSED:
-            # gnwy = 
-            break
-    window.close()
+#     while True:
+#         event, values = window.read()
+#         # if event == "Done":
+#             # startapp()
+#         if event == "Done" or event == sg.WIN_CLOSED:
+#             # gnwy = 
+#             break
+#     window.close()
 
-def startapp():
-    GNWY = int(values['-GNWY-'])
-    SHVR = int(values['-SHVR-'])
-    ZIC = int(values['-ZIC-'])
-    ZIP = int(values['-ZIP-'])
-    inputTrials = int(values['-inputTrials-'])
-    inputTrialsRecorded = int(values['-inputTrialsRecorded-'])
-    print(f'GNWY: {GNWY}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
+# # def startapp():
+#     GNWY = int(values['-GNWY-'])
+#     SHVR = int(values['-SHVR-'])
+#     ZIC = int(values['-ZIC-'])
+#     ZIP = int(values['-ZIP-'])
+#     inputTrials = int(values['-inputTrials-'])
+#     inputTrialsRecorded = int(values['-inputTrialsRecorded-'])
+#     print(f'GNWY: {GNWY}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
     # set up common parameters for all market sessions
     start_time = 0.0
     end_time = 600.0
@@ -2008,8 +2051,10 @@ def startapp():
     #               'interval': 30, 'timemode': 'periodic'}
 
     # using the input variables
-    buyers_spec = [('GVWY',GNWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
-    sellers_spec = [('GVWY',GNWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+    # buyers_spec = [('SNPR',1),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+    # sellers_spec = [('SNPR',1),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+    buyers_spec = [('SNPR',1),('SHVR',1),('ZIC',1),('ZIP',1)]
+    sellers_spec = [('SNPR',1),('SHVR',1),('ZIC',1),('ZIP',1)]
 
     traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
 
@@ -2018,10 +2063,11 @@ def startapp():
     verbose = True
 
     # n_trials is how many trials (i.e. market sessions) to run in total
-    n_trials = inputTrials
-
+    # n_trials = inputTrials
+    n_trials = 1
     # n_recorded is how many trials (i.e. market sessions) to write full data-files for
-    n_trials_recorded = inputTrialsRecorded
+    # n_trials_recorded = inputTrialsRecorded
+    n_trials_recorded = 1
 
     tdump=open('avg_balance.csv','w')
 
