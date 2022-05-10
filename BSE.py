@@ -1971,8 +1971,10 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
         # record the blotter for each trader
         bdump = open(sess_id+'_blotters.csv', 'w')
         for t in traders:
+            print('%s, %d\n'% (traders[t].tid, len(traders[t].blotter)))
             bdump.write('%s, %d\n'% (traders[t].tid, len(traders[t].blotter)))
             for b in traders[t].blotter:
+                print('%s, Blotteritem, %s\n' % (traders[t].tid, b))
                 bdump.write('%s, Blotteritem, %s\n' % (traders[t].tid, b))
         bdump.close()
 
