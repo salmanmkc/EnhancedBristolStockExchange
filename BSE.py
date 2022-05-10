@@ -50,6 +50,7 @@ import sys
 import math
 import random
 import PySimpleGUI as sg
+from collections import defaultdict
 
 bse_sys_minprice = 1  # minimum price in the system, in cents/pennies
 bse_sys_maxprice = 1000  # maximum price in the system, in cents/pennies
@@ -1560,6 +1561,7 @@ class Trader_ZIP(Trader):
 # the number of traders of any one type -- allows either/both to change
 # between successive calls, but that does make it inefficient as it has to
 # re-analyse the entire set of traders on each call
+# transaction CSV the one used for processResults
 def trade_stats(expid, traders, dumpfile, time, lob):
 
     # Analyse the set of traders, to see what types we have
@@ -1575,6 +1577,9 @@ def trade_stats(expid, traders, dumpfile, time, lob):
         trader_types[ttype] = {'n': n, 'balance_sum': t_balance}
 
     # first two columns of output are the session_id and the time
+    flag = False
+    if time == 600:
+        flag = True
     dumpfile.write('%s, %06d, ' % (expid, time))
 
     # second two columns of output are the LOB best bid and best offer (or 'None' if they're undefined)
@@ -1590,9 +1595,15 @@ def trade_stats(expid, traders, dumpfile, time, lob):
     # total remaining number of columns printed depends on number of different trader-types at this timestep
     # for each trader type we print FOUR columns...
     # TraderTypeCode, TotalProfitForThisTraderType, NumberOfTradersOfThisType, AverageProfitPerTraderOfThisType
+    profitsDict = defaultdict(float)
     for ttype in sorted(list(trader_types.keys())):
         n = trader_types[ttype]['n']
         s = trader_types[ttype]['balance_sum']
+        print('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
+        if flag:
+            print(f'\nFINAL PROFITS')
+            profitsDict[ttype] = s / float(n)
+            print('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
         dumpfile.write('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
 
     if lob['bids']['best'] is not None:
