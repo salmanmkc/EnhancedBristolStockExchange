@@ -1578,7 +1578,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
 
     # first two columns of output are the session_id and the time
     flag = False
-    if time == 600:
+    if time >= 600:
         flag = True
     dumpfile.write('%s, %06d, ' % (expid, time))
 
@@ -1606,7 +1606,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
             profitsDict['avgTotal'] += s / float(n)
             print('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
         dumpfile.write('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
-
+    # flag = True
     if lob['bids']['best'] is not None:
         dumpfile.write('%d, ' % (lob['bids']['best']))
     else:
@@ -1617,6 +1617,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
         dumpfile.write('N, ')
 
     dumpfile.write('\n')
+    flag = False
     return [profitsDict, profitsDict['avgTotal']]
 
 # create a bunch of traders from traders_spec
@@ -2115,21 +2116,31 @@ if __name__ == "__main__":
     trial = 1
     trials = []
     trialsProfts = []
-    while trial < (n_trials+1):
+    highestRun = None
+    higher = True
+    lower = True
+    initialRun = None
+    optimalAgentCount = GNWY
+    initialAgentCount = GNWY
+    # while trial < (n_trials+1):
+    while trial < (5):
         trial_id = 'sess%04d' % trial
 
         if trial > n_trials_recorded:
             dump_all = False
         else:
             dump_all = True
+        # first ever experiment
         if trial == 1:
             trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
             trials.append(trialRun)
             trialsProfts.append(trialRun[1])
+            highestRun = trialRun[1]
+            initialRun = trialRun[1]
         # logic for checking total profit goes here and optimisation
-        elif trial > 1:
+        elif trial > 1 and trial < 5:
             # explore reducing
-            if GNWY > 1:
+            if GNWY > 1 and lower:
                 GNWY -= 1
                 buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
                 sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
@@ -2137,7 +2148,16 @@ if __name__ == "__main__":
                 trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
-            else:
+                if not trialRun[1] > highestRun:
+                    # lower = False
+                    # continue
+                    print()
+                else:
+                    highestRun = trialRun[1]
+                    optimalAgentCount = GNWY
+
+
+            if higher:
                 GNWY += 1
                 buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
                 sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
@@ -2145,11 +2165,21 @@ if __name__ == "__main__":
                 trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
+                if not trialRun[1] > highestRun:
+                    # higher = False
+                    print()
+                    # continue
+                else:
+                    highestRun = trialRun[1]
+                    optimalAgentCount = GNWY
+        
+            # explore changing the amount of time now or other things
+        # trial += 1
             
             # explore increasing
-            
         tdump.flush()
         trial = trial + 1
+    print(f'Optimal agent count is {optimalAgentCount}, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents')
 
     tdump.close()
 
