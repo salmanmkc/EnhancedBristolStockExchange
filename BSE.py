@@ -2011,6 +2011,8 @@ if __name__ == "__main__":
         [sg.Text("Customise parameters below")],
         [sg.Text("Agent count")],
         [sg.Input(size=(25,1), enable_events=True, key="-Agent-", tooltip="Enter the number of Agent traders you want per type")],
+        [sg.Text("End time")],
+        [sg.Input(size=(25,1), enable_events=True, key="-EndTime-", tooltip="Enter the number of Agent traders you want per type")],
         # [sg.Text("SHVR count")],
         # [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
         # [sg.Text("ZIC count")],
@@ -2038,7 +2040,7 @@ if __name__ == "__main__":
     window.close()
 
 # def startapp():
-    Agent = int(values['-Agent-'])
+    Agent = float(values['-EndTime-'])
     # SHVR = int(values['-SHVR-'])
     # ZIC = int(values['-ZIC-'])
     # ZIP = int(values['-ZIP-'])
@@ -2047,7 +2049,8 @@ if __name__ == "__main__":
     # print(f'Agent: {Agent}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
     # set up common parameters for all market sessions
     start_time = 0.0
-    end_time = 600.0
+    # end_time = 600.0
+    end_time = int(values['-Agent-'])
     duration = end_time - start_time
 
 
