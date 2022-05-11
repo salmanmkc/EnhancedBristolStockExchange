@@ -2320,7 +2320,7 @@ if __name__ == "__main__":
         # agentCap 
         agentCap = Agent*2
         timeCap = end_time*2
-        buygnwycount = random.randint(1, agentCAp)
+        buygnwycount = random.randint(1, agentCap)
         buyshvrcount = random.randint(1, agentCap) 
         buyziccount = random.randint(1, agentCap) 
         buyzipcount = random.randint(1, agentCap) 
