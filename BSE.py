@@ -2009,8 +2009,8 @@ if __name__ == "__main__":
 
     layout = [
         [sg.Text("Customise parameters below")],
-        [sg.Text("GNWY count")],
-        [sg.Input(size=(25,1), enable_events=True, key="-GNWY-", tooltip="Enter the number of GNWY traders you want")],
+        [sg.Text("Agent count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-Agent-", tooltip="Enter the number of Agent traders you want per type")],
         # [sg.Text("SHVR count")],
         # [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
         # [sg.Text("ZIC count")],
@@ -2033,18 +2033,18 @@ if __name__ == "__main__":
         # if event == "Done":
             # startapp()
         if event == "Done" or event == sg.WIN_CLOSED:
-            # gnwy = 
+            # Agent = 
             break
     window.close()
 
 # def startapp():
-    GNWY = int(values['-GNWY-'])
+    Agent = int(values['-Agent-'])
     # SHVR = int(values['-SHVR-'])
     # ZIC = int(values['-ZIC-'])
     # ZIP = int(values['-ZIP-'])
     # inputTrials = int(values['-inputTrials-'])
     # inputTrialsRecorded = int(values['-inputTrialsRecorded-'])
-    # print(f'GNWY: {GNWY}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
+    # print(f'Agent: {Agent}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
     # set up common parameters for all market sessions
     start_time = 0.0
     end_time = 600.0
@@ -2095,8 +2095,8 @@ if __name__ == "__main__":
     # using the input variables
     # buyers_spec = [('SNPR',1),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
     # sellers_spec = [('SNPR',1),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
-    buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
-    sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+    buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+    sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
 
     traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
 
@@ -2120,8 +2120,8 @@ if __name__ == "__main__":
     higher = True
     lower = True
     initialRun = None
-    optimalAgentCount = GNWY
-    initialAgentCount = GNWY
+    optimalAgentCount = Agent
+    initialAgentCount = Agent
     # while trial < (n_trials+1):
     while trial < (5):
         trial_id = 'sess%04d' % trial
@@ -2140,10 +2140,10 @@ if __name__ == "__main__":
         # logic for checking total profit goes here and optimisation
         elif trial > 1 and trial < 5:
             # explore reducing
-            if GNWY > 1 and lower:
-                GNWY -= 1
-                buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
-                sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+            if Agent > 1 and lower:
+                Agent -= 1
+                buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+                sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
                 trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
@@ -2154,13 +2154,13 @@ if __name__ == "__main__":
                     print()
                 else:
                     highestRun = trialRun[1]
-                    optimalAgentCount = GNWY
+                    optimalAgentCount = Agent
 
 
             if higher:
-                GNWY += 1
-                buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
-                sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+                Agent += 1
+                buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+                sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
                 trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
@@ -2171,7 +2171,7 @@ if __name__ == "__main__":
                     # continue
                 else:
                     highestRun = trialRun[1]
-                    optimalAgentCount = GNWY
+                    optimalAgentCount = Agent
         
             # explore changing the amount of time now or other things
         # trial += 1
