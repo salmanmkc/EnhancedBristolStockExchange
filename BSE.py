@@ -2062,6 +2062,7 @@ if __name__ == "__main__":
     agentExploreCount = int(values['-AgentExploreCount-'])
     timeExploreCount = int(values['-TimeExploreCount-'])
     randomMutationCount = int(values['-RandomMutationCount-'])
+    # print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
 
     # schedule_offsetfn returns time-dependent offset, to be added to schedule prices
     def schedule_offsetfn(t):
@@ -2362,6 +2363,7 @@ if __name__ == "__main__":
         tdump.flush()
         trial = trial + 1
 
+    print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
     print(f'Optimal agent count is {optimalAgentCount} with {optimalTime} seconds, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents and {initialTime} seconds')
 
     print(f'Highest genetic run {geneticHighestRun}. Configuration: \n{geneticOutputs}')
