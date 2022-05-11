@@ -1992,7 +1992,7 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
 
     # write trade_stats for this session (NB end-of-session summary only)
     tradeProfits = trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose))
-    return tradePofits
+    return tradeProfits
 
 
 
@@ -2121,7 +2121,8 @@ if __name__ == "__main__":
         else:
             dump_all = True
 
-        trials['sess%04d' % trial] = market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose)
+        trials.append(market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+        # logic for checking total profit goes here and optimisation
         tdump.flush()
         trial = trial + 1
 
