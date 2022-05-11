@@ -1962,7 +1962,7 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
                 traders[trade['party1']].bookkeep(trade, order, bookkeep_verbose, time)
                 traders[trade['party2']].bookkeep(trade, order, bookkeep_verbose, time)
                 if dump_all:
-                    trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose))
+                    trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose), endtime)
 
             # traders respond to whatever happened
             lob = exchange.publish_lob(time, lob_verbose)
@@ -2215,7 +2215,7 @@ if __name__ == "__main__":
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
                 if not trialRun[1] > highestRun:
-                    lowerTime -= amountLower
+                    lowerTime += amountLower
                     amountLower = amountLower / 2
                     print()
                 else:
