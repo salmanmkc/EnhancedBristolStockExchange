@@ -2208,6 +2208,20 @@ if __name__ == "__main__":
             # explore reducing
             if lowerTime > 0 and lessTime:
                 lowerTime -= amountLower
+                # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
+
+                range1 = (50, 150)
+                supply_schedule = [{'from': start_time, 'to': lowerTime, 'ranges': [range1], 'stepmode': 'fixed'}
+                                ]
+
+                range2 = (50, 150)
+                demand_schedule = [{'from': start_time, 'to': lowerTime, 'ranges': [range2], 'stepmode': 'fixed'}
+                                ]
+
+                order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
+                            'interval': 30, 'timemode': 'drip-poisson'}
+                # Use 'periodic' if you want the traders' assignments to all arrive simultaneously & periodically
+                #               'interval': 30, 'timemode': 'periodic'}
                 buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
@@ -2225,6 +2239,18 @@ if __name__ == "__main__":
 
             if moreTime:
                 upperTime += amountUpper
+                # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
+
+                range1 = (50, 150)
+                supply_schedule = [{'from': start_time, 'to': upperTime, 'ranges': [range1], 'stepmode': 'fixed'}
+                                ]
+
+                range2 = (50, 150)
+                demand_schedule = [{'from': start_time, 'to': upperTime, 'ranges': [range2], 'stepmode': 'fixed'}
+                                ]
+
+                order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
+                            'interval': 30, 'timemode': 'drip-poisson'}
                 buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
