@@ -1562,7 +1562,7 @@ class Trader_ZIP(Trader):
 # between successive calls, but that does make it inefficient as it has to
 # re-analyse the entire set of traders on each call
 # transaction CSV the one used for processResults
-def trade_stats(expid, traders, dumpfile, time, lob):
+def trade_stats(expid, traders, dumpfile, time, lob, endtime):
 
     # Analyse the set of traders, to see what types we have
     trader_types = {}
@@ -1578,7 +1578,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
 
     # first two columns of output are the session_id and the time
     flag = False
-    if time >= 600:
+    if time >= endtime:
         flag = True
     dumpfile.write('%s, %06d, ' % (expid, time))
 
@@ -1993,7 +1993,7 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
 
 
     # write trade_stats for this session (NB end-of-session summary only)
-    tradeProfits = trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose))
+    tradeProfits = trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose), endtime)
     return tradeProfits
 
 
