@@ -2273,6 +2273,7 @@ if __name__ == "__main__":
         tdump.flush()
         trial = trial + 1
     # genetic mutations
+    geneticHighestRun = 0
     while trial < 15:
         trial_id = 'sess%04d' % trial
 
@@ -2296,15 +2297,24 @@ if __name__ == "__main__":
         if trial > 9 and trial < 15:
             # explore reducing
             # if lowerTime > 0 and lessTime:
-                lowerTime -= amountLower
+                buygnwycount = random.randint(1, 10)
+                buyshvrcount = random.randint(1, 10) 
+                buyziccount = random.randint(1, 10) 
+                buyzipcount = random.randint(1, 10) 
+                sellgnwycount = random.randint(1, 10) 
+                sellshvrcount = random.randint(1, 10) 
+                sellzicaccount = random.randint(1, 10) 
+                sellzipaccount = random.randint(1, 10)
+                newTime = random.randint(300, 1200)
+                # lowerTime -= amountLower
                 # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
 
                 range1 = (50, 150)
-                supply_schedule = [{'from': start_time, 'to': lowerTime, 'ranges': [range1], 'stepmode': 'fixed'}
+                supply_schedule = [{'from': start_time, 'to': newTime, 'ranges': [range1], 'stepmode': 'fixed'}
                                 ]
 
                 range2 = (50, 150)
-                demand_schedule = [{'from': start_time, 'to': lowerTime, 'ranges': [range2], 'stepmode': 'fixed'}
+                demand_schedule = [{'from': start_time, 'to': newTime, 'ranges': [range2], 'stepmode': 'fixed'}
                                 ]
 
                 order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
@@ -2314,47 +2324,16 @@ if __name__ == "__main__":
                 buyers_spec = [('GVWY',buygnwycount),('SHVR',buyshvrcount),('ZIC',buyziccount),('ZIP',buyzipcount)]
                 sellers_spec = [('GVWY',sellgnwycount),('SHVR',sellshvrcount),('ZIC',sellziccount),('ZIP',sellzipcount)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
-                trialRun = (market_session(trial_id, start_time, lowerTime, traders_spec, order_sched, tdump, dump_all, verbose))
+                trialRun = (market_session(trial_id, start_time, newTime, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
-                if not trialRun[1] > highestRun:
-                    lowerTime += amountLower
-                    amountLower = amountLower / 2
+                if not trialRun[1] > 0:
+                    # lowerTime += amountLower
+                    # amountLower = amountLower / 2
                     print()
                 else:
-                    highestRun = trialRun[1]
-                    optimalTime = lowerTime
-
-
-            if moreTime:
-                upperTime += amountUpper
-                # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-
-                range1 = (50, 150)
-                supply_schedule = [{'from': start_time, 'to': upperTime, 'ranges': [range1], 'stepmode': 'fixed'}
-                                ]
-
-                range2 = (50, 150)
-                demand_schedule = [{'from': start_time, 'to': upperTime, 'ranges': [range2], 'stepmode': 'fixed'}
-                                ]
-
-                order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
-                            'interval': 30, 'timemode': 'drip-poisson'}
-                buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
-                sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
-                traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
-                trialRun = (market_session(trial_id, start_time, upperTime, traders_spec, order_sched, tdump, dump_all, verbose))
-                trials.append(trialRun)
-                trialsProfts.append(trialRun[1])
-                if not trialRun[1] > highestRun:
-                    upperTime -= amountUpper
-                    amountUpper = amountUpper / 2
-                    print()
-                    # continue
-                else:
-                    highestRun = trialRun[1]
-                    optimalTime = upperTime
-        
+                    geneticHighestRun = trialRun[1]
+                    geneticOutputs = f'Buy GNWY count: {buygnwycount}, BUY SHVR count: {buyshvrcount}, BUY ZIC count: {buyziccount}, BUY ZIP count{buyzipcount} \nSell GNWY count: {sellgnwycount}, Sell SHVR count {sellshvrcount}, Sell ZIC count {sellzipcount}, Sell ZIP count {sellzipcount}'        
             # explore changing the amount of time now or other things
         # trial += 1
             
@@ -2364,6 +2343,7 @@ if __name__ == "__main__":
 
     print(f'Optimal agent count is {optimalAgentCount} with {optimalTime} seconds, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents and {initialTime} seconds')
 
+    print(f'Highest genetic run {geneticHighestRun}. Configuration: \ngeneticOutputs')
     tdump.close()
 
     # run a sequence of trials that exhaustively varies the ratio of four trader types
