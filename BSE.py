@@ -2274,6 +2274,7 @@ if __name__ == "__main__":
         trial = trial + 1
     # genetic mutations
     geneticHighestRun = 0
+    geneticOutputs = ""
     while trial < 15:
         trial_id = 'sess%04d' % trial
 
@@ -2327,7 +2328,7 @@ if __name__ == "__main__":
                 trialRun = (market_session(trial_id, start_time, newTime, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
-                if not trialRun[1] > 0:
+                if not trialRun[1] > geneticHighestRun:
                     # lowerTime += amountLower
                     # amountLower = amountLower / 2
                     print()
