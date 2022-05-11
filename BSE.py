@@ -2344,9 +2344,9 @@ if __name__ == "__main__":
 
     print(f'Optimal agent count is {optimalAgentCount} with {optimalTime} seconds, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents and {initialTime} seconds')
 
-    print(f'Highest genetic run {geneticHighestRun}. Configuration: \ngeneticOutputs')
+    print(f'Highest genetic run {geneticHighestRun}. Configuration: \n{geneticOutputs}')
     tdump.close()
-
+    
     # run a sequence of trials that exhaustively varies the ratio of four trader types
     # NB this has weakness of symmetric proportions on buyers/sellers -- combinatorics of varying that are quite nasty
     #
