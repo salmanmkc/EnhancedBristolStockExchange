@@ -1603,6 +1603,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
         if flag:
             print(f'\nFINAL PROFITS')
             profitsDict[ttype] = s / float(n)
+            profitsDict['total'] += s / float(n)
             print('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
         dumpfile.write('%s, %d, %d, %f, ' % (ttype, s, n, s / float(n)))
 
