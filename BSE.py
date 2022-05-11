@@ -2127,7 +2127,7 @@ if __name__ == "__main__":
             trials.append(trialRun)
             trialsProfts.append(trialRun[1])
         # logic for checking total profit goes here and optimisation
-        else if trial > 1:
+        elif trial > 1:
             # explore reducing
             if GNWY > 1:
                 GNWY -= 1
