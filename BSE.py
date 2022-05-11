@@ -1616,7 +1616,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
         dumpfile.write('N, ')
 
     dumpfile.write('\n')
-
+    return profitsDict
 
 # create a bunch of traders from traders_spec
 # returns tuple (n_buyers, n_sellers)
@@ -1991,7 +1991,8 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
 
 
     # write trade_stats for this session (NB end-of-session summary only)
-    trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose))
+    tradeProfits = trade_stats(sess_id, traders, tdump, time, exchange.publish_lob(time, lob_verbose))
+    return tradePofits
 
 
 
@@ -2111,7 +2112,7 @@ if __name__ == "__main__":
     tdump=open('avg_balance.csv','w')
 
     trial = 1
-
+    trials = []
     while trial < (n_trials+1):
         trial_id = 'sess%04d' % trial
 
@@ -2120,7 +2121,7 @@ if __name__ == "__main__":
         else:
             dump_all = True
 
-        market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose)
+        trials['sess%04d' % trial] = market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose)
         tdump.flush()
         trial = trial + 1
 
