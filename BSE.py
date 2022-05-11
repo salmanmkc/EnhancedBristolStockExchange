@@ -2305,7 +2305,7 @@ if __name__ == "__main__":
                 sellgnwycount = random.randint(1, 10) 
                 sellshvrcount = random.randint(1, 10) 
                 sellziccount = random.randint(1, 10) 
-                sellzipccount = random.randint(1, 10)
+                sellzipcount = random.randint(1, 10)
                 newTime = random.randint(300, 1200)
                 # lowerTime -= amountLower
                 # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
