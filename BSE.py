@@ -2182,7 +2182,7 @@ if __name__ == "__main__":
     # using optimal agent account, explore optimal time
     moreTime = True
     lessTime = True
-    optimalTime = None
+    optimalTime = end_time
     initialTime = end_time
     while trial < 10:
         trial_id = 'sess%04d' % trial
@@ -2200,19 +2200,23 @@ if __name__ == "__main__":
         #     initialRun = trialRun[1]
         # # logic for checking total profit goes here and optimisation
         # el
+        upperTime = end_time
+        lowerTime = end_time
+        amountUpper = 50
+        amountLower = 50
         if trial > 4 and trial < 9:
             # explore reducing
-            if end_time > 0 and lessTime:
-                end_time -= 50
+            if lowerTime > 0 and lessTime:
+                lowerTime -= amountLower
                 buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
-                trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                trialRun = (market_session(trial_id, start_time, lowerTime, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
                 if not trialRun[1] > highestRun:
-                    # lower = False
-                    # continue
+                    lowerTime -= amountLower
+                    amountLower = amountLower / 2
                     print()
                 else:
                     highestRun = trialRun[1]
@@ -2220,15 +2224,16 @@ if __name__ == "__main__":
 
 
             if moreTime:
-                end_time += 50
+                upperTime += amountUpper
                 buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
-                trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                trialRun = (market_session(trial_id, start_time, upperTime, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
                 trialsProfts.append(trialRun[1])
                 if not trialRun[1] > highestRun:
-                    # higher = False
+                    upperTime -= amountUpper
+                    amountUpper = amountUpper / 2
                     print()
                     # continue
                 else:
