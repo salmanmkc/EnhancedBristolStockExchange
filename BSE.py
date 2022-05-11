@@ -2179,7 +2179,70 @@ if __name__ == "__main__":
             # explore increasing
         tdump.flush()
         trial = trial + 1
-    print(f'Optimal agent count is {optimalAgentCount}, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents')
+    # using optimal agent account, explore optimal time
+    moreTime = True
+    lessTime = True
+    optimalTime = None
+    initialTime = end_time
+    while trial < 10:
+        trial_id = 'sess%04d' % trial
+
+        if trial > n_trials_recorded:
+            dump_all = False
+        else:
+            dump_all = True
+        # first ever experiment
+        # if trial == 5:
+        #     trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+        #     trials.append(trialRun)
+        #     trialsProfts.append(trialRun[1])
+        #     highestRun = trialRun[1]
+        #     initialRun = trialRun[1]
+        # # logic for checking total profit goes here and optimisation
+        # el
+        if trial > 4 and trial < 9:
+            # explore reducing
+            if end_time > 0 and lessTime:
+                end_time -= 50
+                buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
+                sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
+                traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                trials.append(trialRun)
+                trialsProfts.append(trialRun[1])
+                if not trialRun[1] > highestRun:
+                    # lower = False
+                    # continue
+                    print()
+                else:
+                    highestRun = trialRun[1]
+                    optimalTime = end_time
+
+
+            if moreTime:
+                end_time += 50
+                buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
+                sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
+                traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                trials.append(trialRun)
+                trialsProfts.append(trialRun[1])
+                if not trialRun[1] > highestRun:
+                    # higher = False
+                    print()
+                    # continue
+                else:
+                    highestRun = trialRun[1]
+                    optimalTime = end_time
+        
+            # explore changing the amount of time now or other things
+        # trial += 1
+            
+            # explore increasing
+        tdump.flush()
+        trial = trial + 1
+
+    print(f'Optimal agent count is {optimalAgentCount} with {optimalTime} seconds, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents and {initialTime} seconds')
 
     tdump.close()
 
