@@ -2219,8 +2219,8 @@ if __name__ == "__main__":
         # el
         upperTime = end_time
         lowerTime = end_time
-        amountUpper = 50
-        amountLower = 50
+        amountUpper = 25
+        amountLower = 25
         # if trial > 4 and trial < 9:
             # explore reducing
         if lowerTime > 0 and lessTime:
@@ -2362,6 +2362,7 @@ if __name__ == "__main__":
             # explore increasing
         tdump.flush()
         trial = trial + 1
+        i += 1
 
     print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
     print(f'Optimal agent count is {optimalAgentCount} with {optimalTime} seconds, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents and {initialTime} seconds')
