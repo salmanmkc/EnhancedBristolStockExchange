@@ -2122,11 +2122,32 @@ if __name__ == "__main__":
             dump_all = False
         else:
             dump_all = True
-
-        trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
-        trials.append(trialRun)
-        trialsProfts.append(trialRun[1])
+        if trial == 1:
+            trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+            trials.append(trialRun)
+            trialsProfts.append(trialRun[1])
         # logic for checking total profit goes here and optimisation
+        else if trial > 1:
+            # explore reducing
+            if GNWY > 1:
+                GNWY -= 1
+                buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+                sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+                traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                trials.append(trialRun)
+                trialsProfts.append(trialRun[1])
+            else:
+                GNWY += 1
+                buyers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+                sellers_spec = [('GVWY',GNWY),('SHVR',GNWY),('ZIC',GNWY),('ZIP',GNWY)]
+                traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                trials.append(trialRun)
+                trialsProfts.append(trialRun[1])
+            
+            # explore increasing
+            
         tdump.flush()
         trial = trial + 1
 
