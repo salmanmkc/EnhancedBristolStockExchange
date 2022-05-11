@@ -2316,15 +2316,18 @@ if __name__ == "__main__":
        
         # explore reducing
         # if lowerTime > 0 and lessTime:
-        buygnwycount = random.randint(1, 10)
-        buyshvrcount = random.randint(1, 10) 
-        buyziccount = random.randint(1, 10) 
-        buyzipcount = random.randint(1, 10) 
-        sellgnwycount = random.randint(1, 10) 
-        sellshvrcount = random.randint(1, 10) 
-        sellziccount = random.randint(1, 10) 
-        sellzipcount = random.randint(1, 10)
-        newTime = random.randint(300, 1200)
+        # agentCap 
+        agentCap = Agent*2
+        timeCap = ent_time*2
+        buygnwycount = random.randint(1, agentCAp)
+        buyshvrcount = random.randint(1, agentCap) 
+        buyziccount = random.randint(1, agentCap) 
+        buyzipcount = random.randint(1, agentCap) 
+        sellgnwycount = random.randint(1, agentCap) 
+        sellshvrcount = random.randint(1, agentCap) 
+        sellziccount = random.randint(1, agentCap) 
+        sellzipcount = random.randint(1, agentCap)
+        newTime = random.randint(300, timeCap)
         # lowerTime -= amountLower
         # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
 
