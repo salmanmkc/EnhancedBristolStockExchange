@@ -1617,7 +1617,7 @@ def trade_stats(expid, traders, dumpfile, time, lob):
         dumpfile.write('N, ')
 
     dumpfile.write('\n')
-    return profitsDict
+    return [profitsDict, profitsDict['total']]
 
 # create a bunch of traders from traders_spec
 # returns tuple (n_buyers, n_sellers)
