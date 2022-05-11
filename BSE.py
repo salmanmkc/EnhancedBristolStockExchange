@@ -2014,7 +2014,6 @@ if __name__ == "__main__":
         [sg.Input(size=(25,1), enable_events=True, key="-Agent-", tooltip="Enter the number of Agent traders you want per type")],
         [sg.Text("End time")],
         [sg.Input(size=(25,1), enable_events=True, key="-EndTime-", tooltip="Enter the end time for the initial run")],
-        AgentExploreCount
         [sg.Text("Agent Explore Radius")],
         [sg.Input(size=(25,1), enable_events=True, key="-AgentExploreCount-", tooltip="Enter how far away you would like to explore from the initial agent count, e.g. 2 means your input value +-2 so 6 would mean 4 to 8")],
         [sg.Text("Time Explore Radius")],
@@ -2048,7 +2047,7 @@ if __name__ == "__main__":
     window.close()
 
 # def startapp():
-    Agent = float(values['-EndTime-'])
+    end_time = float(values['-EndTime-'])
     # SHVR = int(values['-SHVR-'])
     # ZIC = int(values['-ZIC-'])
     # ZIP = int(values['-ZIP-'])
@@ -2058,7 +2057,7 @@ if __name__ == "__main__":
     # set up common parameters for all market sessions
     start_time = 0.0
     # end_time = 600.0
-    end_time = int(values['-Agent-'])
+    Agent = int(values['-Agent-'])
     duration = end_time - start_time
     agentExploreCount = int(values['-AgentExploreCount-'])
     timeExploreCount = int(values['-TimeExploreCount-'])
