@@ -2234,7 +2234,7 @@ if __name__ == "__main__":
                     print()
                 else:
                     highestRun = trialRun[1]
-                    optimalTime = end_time
+                    optimalTime = lowerTime
 
 
             if moreTime:
@@ -2264,7 +2264,7 @@ if __name__ == "__main__":
                     # continue
                 else:
                     highestRun = trialRun[1]
-                    optimalTime = end_time
+                    optimalTime = upperTime
         
             # explore changing the amount of time now or other things
         # trial += 1
