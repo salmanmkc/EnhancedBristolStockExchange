@@ -2114,6 +2114,7 @@ if __name__ == "__main__":
 
     trial = 1
     trials = []
+    trialsProfts = []
     while trial < (n_trials+1):
         trial_id = 'sess%04d' % trial
 
@@ -2122,7 +2123,9 @@ if __name__ == "__main__":
         else:
             dump_all = True
 
-        trials.append(market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+        trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+        trials.append(trialRun)
+        trialsProfts.append(trialRun[1])
         # logic for checking total profit goes here and optimisation
         tdump.flush()
         trial = trial + 1
