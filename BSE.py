@@ -2304,7 +2304,7 @@ if __name__ == "__main__":
                 buyzipcount = random.randint(1, 10) 
                 sellgnwycount = random.randint(1, 10) 
                 sellshvrcount = random.randint(1, 10) 
-                sellzicccount = random.randint(1, 10) 
+                sellziccount = random.randint(1, 10) 
                 sellzipccount = random.randint(1, 10)
                 newTime = random.randint(300, 1200)
                 # lowerTime -= amountLower
