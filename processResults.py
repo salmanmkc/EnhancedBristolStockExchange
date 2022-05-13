@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 print(list(string.ascii_uppercase)[0:22])
 
-avgBalance = pd.read_csv("avg_balance.csv",header=None,\
+avgBalance = pd.read_csv("sess.csv",header=None,\
                          names=list(string.ascii_uppercase)[0:22],\
                          index_col=False)
 
