@@ -2123,7 +2123,7 @@ if __name__ == "__main__":
         n_trials = 1
         # n_recorded is how many trials (i.e. market sessions) to write full data-files for
         # n_trials_recorded = inputTrialsRecorded
-        n_trials_recorded = 1
+        n_trials_recorded = agentExploreCount + timeExploreCount + randomMutationCount
 
         tdump=open('avg_balance.csv','w')
 
