@@ -2004,14 +2004,30 @@ def market_session(sess_id, starttime, endtime, trader_spec, order_schedule, tdu
 # # Below here is where we set up and run a series of experiments
 
 
+
+
 if __name__ == "__main__":
 
     
 
     layout = [
         [sg.Text("Customise parameters below")],
-        [sg.Text("Agent count")],
-        [sg.Input(size=(25,1), enable_events=True, key="-Agent-", tooltip="Enter the number of Agent traders you want per type")],
+        [sg.Text("GVWY count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-GVWY-", tooltip="Enter the number of GVWY traders you want per type")],
+        [sg.Text("SHVR count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
+        [sg.Text("ZIC count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-ZIC-", tooltip="Enter the number of ZIC traders you want")],
+        [sg.Text("ZIP count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-ZIP-", tooltip="Enter the number of ZIP traders you want")],
+        [sg.Text("GVWY sell count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-GVWYsell-", tooltip="Enter the number of GVWY sell traders you want per type")],
+        [sg.Text("SHVR sell count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-SHVRsell-", tooltip="Enter the number of SHVR sell traders you want")],
+        [sg.Text("ZIC sell count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-ZICsell-", tooltip="Enter the number of ZIC sell traders you want")],
+        [sg.Text("ZIP sell count")],
+        [sg.Input(size=(25,1), enable_events=True, key="-ZIPsell-", tooltip="Enter the number of ZIP sell traders you want")],
         [sg.Text("End time")],
         [sg.Input(size=(25,1), enable_events=True, key="-EndTime-", tooltip="Enter the end time for the initial run")],
         [sg.Text("Agent Explore Radius")],
@@ -2020,12 +2036,7 @@ if __name__ == "__main__":
         [sg.Input(size=(25,1), enable_events=True, key="-TimeExploreCount-", tooltip="How accurate much would you like the agent to explore time?")],
         [sg.Text("Random mutation count")],
         [sg.Input(size=(25,1), enable_events=True, key="-RandomMutationCount-", tooltip="How many random mutations would you like to generate?")],
-        # [sg.Text("SHVR count")],
-        # [sg.Input(size=(25,1), enable_events=True, key="-SHVR-", tooltip="Enter the number of SHVR traders you want")],
-        # [sg.Text("ZIC count")],
-        # [sg.Input(size=(25,1), enable_events=True, key="-ZIC-", tooltip="Enter the number of ZIC traders you want")],
-        # [sg.Text("ZIP count")],
-        # [sg.Input(size=(25,1), enable_events=True, key="-ZIP-", tooltip="Enter the number of ZIP traders you want")],
+
         # [sg.Text("Input Trials")],
         # [sg.Input(size=(25,1), enable_events=True, key="-inputTrials-", tooltip="Enter the number of Trials you want")],
         # [sg.Text("Input Trials Recorded")],
@@ -2049,22 +2060,28 @@ if __name__ == "__main__":
 
     # def startapp():
     end_time = float(values['-EndTime-'])
-    # SHVR = int(values['-SHVR-'])
-    # ZIC = int(values['-ZIC-'])
-    # ZIP = int(values['-ZIP-'])
+    GVWY = int(values['-GVWY-'])
+    SHVR = int(values['-SHVR-'])
+    ZIC = int(values['-ZIC-'])
+    ZIP = int(values['-ZIP-'])
+    GVWYsell = int(values['-GVWYsell-'])
+    SHVRsell = int(values['-SHVRsell-'])
+    ZICsell = int(values['-ZICsell-'])
+    ZIPsell = int(values['-ZIPsell-'])
+    Agent = (SHVR + ZIC + ZIP + GVWY + GVWYsell+ ZICsell + ZIPsell + ZICsell)//8
     # inputTrials = int(values['-inputTrials-'])
     # inputTrialsRecorded = int(values['-inputTrialsRecorded-'])
     # print(f'Agent: {Agent}, SHVR: {SHVR}, ZIC: {ZIC}, ZIP: {ZIP}')
     # set up common parameters for all market sessions
     start_time = 0.0
     # end_time = 600.0
-    Agent = int(values['-Agent-'])
+    
     duration = end_time - start_time
     agentExploreCount = int(values['-AgentExploreCount-'])
     timeExploreCount = int(values['-TimeExploreCount-'])
     randomMutationCount = int(values['-RandomMutationCount-'])
     # print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
-    print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
+    print(f'Input variables:\nGVWY count: {GVWY}, SHVR count: {SHVR}, ZIC count: {ZIC}, ZIP count: {ZIP}, \nGVWY Sell count: {GVWYsell}, SHVR Sell count: {SHVR}, ZIC sell count: {ZICsell}, ZIP sell count: {ZIPsell}\nEnd time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}\n')
     # schedule_offsetfn returns time-dependent offset, to be added to schedule prices
     def schedule_offsetfn(t):
 
@@ -2075,7 +2092,16 @@ if __name__ == "__main__":
         amplitude = 100 * t / (c / pi2)
         offset = gradient + amplitude * math.sin(wavelength * t)
         return int(round(offset, 0))
-
+    # def ModRun(Agent):
+    #     buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+    #     sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+    #     traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+    #     trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+    #     trials.append(trialRun)
+    #     trialsProfts.append(trialRun[1])
+    #     if trialRun[1] > highestRun:
+    #         highestRun = trialRun[1]
+    #         optimalAgentCount = Agent
         # Here is an example of how to use the offset function
         #
         # range1 = (10, 190, schedule_offsetfn)
@@ -2092,7 +2118,7 @@ if __name__ == "__main__":
 
 
         # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-    for i in range(50):
+    for i in range(1):
         range1 = (50, 150)
         supply_schedule = [{'from': start_time, 'to': end_time, 'ranges': [range1], 'stepmode': 'fixed'}
                         ]
@@ -2109,8 +2135,8 @@ if __name__ == "__main__":
         # using the input variables
         # buyers_spec = [('SNPR',1),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
         # sellers_spec = [('SNPR',1),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
-        buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
-        sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+        buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+        sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
 
         traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
 
@@ -2134,14 +2160,21 @@ if __name__ == "__main__":
         higher = True
         lower = True
         initialRun = None
-        optimalAgentCount = Agent
+        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP]
         initialAgentCount = Agent
         # while trial < (n_trials+1):
         # while trial < (5):
         i = 0
-        while i < agentExploreCount:    
+        GVWYh = GVWY
+        SHVRh = SHVR
+        ZICh = ZIC
+        ZIPh = ZIP
+        GVWYsellh = GVWYsell
+        SHVRsellh = SHVRsell
+        ZICsellh = ZICsell
+        ZIPsellh = ZIPsell
+        while i < agentExploreCount + 1:    
             trial_id = 'sess%04d' % trial
-
             if trial > n_trials_recorded:
                 dump_all = False
             else:
@@ -2154,43 +2187,183 @@ if __name__ == "__main__":
                 highestRun = trialRun[1]
                 initialRun = trialRun[1]
             # logic for checking total profit goes here and optimisation
-            elif trial > 1 and trial < 5:
-                # explore reducing
-                if Agent > 1 and lower:
-                    Agent -= 1
-                    buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
-                    sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+            else:
+                if GVWY > 1 and lower: # explore reducing
+                    GVWY -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
                     traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
                     trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
                     trials.append(trialRun)
                     trialsProfts.append(trialRun[1])
                     if trialRun[1] > highestRun:
-                        # lower = False
-                        # continue
-                        # print()
                         highestRun = trialRun[1]
-                        optimalAgentCount = Agent
-
-
-                if higher:
-                    Agent += 1
-                    buyers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
-                    sellers_spec = [('GVWY',Agent),('SHVR',Agent),('ZIC',Agent),('ZIP',Agent)]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    GVWYh += 1
+                    buyers_spec = [('GVWY',GVWYh),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
                     traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
                     trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
                     trials.append(trialRun)
                     trialsProfts.append(trialRun[1])
                     if trialRun[1] > highestRun:
-                        # higher = False
-                        # print()
-                        # continue
                         highestRun = trialRun[1]
-                        optimalAgentCount = Agent
-            
-                # explore changing the amount of time now or other things
-            # trial += 1
-                
-                # explore increasing
+                        optimalAgentCount = [GVWYh, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if SHVR > 1 and lower: # explore reducing
+                    SHVR -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    SHVRh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVRh),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVRh, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if ZIC > 1 and lower: # explore reducing
+                    ZIC -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    ZICh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZICh),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZICh, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if ZIP > 1 and lower: # explore reducing
+                    ZIP -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    ZIPh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIPh)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIPh, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if GVWYsell > 1 and lower: # explore reducing
+                    GVWYsell -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    GVWYsellh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsellh),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsellh, SHVRsell, ZICsell, ZIPsell]
+                if SHVR > 1 and lower: # explore reducing
+                    SHVRsell -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    SHVRsellh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsellh),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsellh, ZICsell, ZIPsell]
+                if ZICsell > 1 and lower: # explore reducing
+                    ZICsell -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    ZICsellh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsellh),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsellh, ZIPsell]
+                if ZIPsell > 1 and lower: # explore reducing
+                    ZIPsell -= 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsell)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
+                if higher: # explore increasing
+                    ZIPsellh += 1
+                    buyers_spec = [('GVWY',GVWY),('SHVR',SHVR),('ZIC',ZIC),('ZIP',ZIP)]
+                    sellers_spec = [('GVWY',GVWYsell),('SHVR',SHVRsell),('ZIC',ZICsell),('ZIP',ZIPsellh)]
+                    traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
+                    trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
+                    trials.append(trialRun)
+                    trialsProfts.append(trialRun[1])
+                    if trialRun[1] > highestRun:
+                        highestRun = trialRun[1]
+                        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsellh]
             tdump.flush()
             trial = trial + 1
             i+= 1
@@ -2199,6 +2372,8 @@ if __name__ == "__main__":
         lessTime = True
         optimalTime = end_time
         initialTime = end_time
+
+        
         i = 0
         while i < timeExploreCount:
             trial_id = 'sess%04d' % trial
@@ -2207,20 +2382,10 @@ if __name__ == "__main__":
                 dump_all = False
             else:
                 dump_all = True
-            # first ever experiment
-            # if trial == 5:
-            #     trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
-            #     trials.append(trialRun)
-            #     trialsProfts.append(trialRun[1])
-            #     highestRun = trialRun[1]
-            #     initialRun = trialRun[1]
-            # # logic for checking total profit goes here and optimisation
-            # el
             upperTime = end_time
             lowerTime = end_time
             amountUpper = 25
             amountLower = 25
-            # if trial > 4 and trial < 9:
                 # explore reducing
             if lowerTime > 0 and lessTime:
                 lowerTime -= amountLower
@@ -2238,8 +2403,8 @@ if __name__ == "__main__":
                             'interval': 30, 'timemode': 'drip-poisson'}
                 # Use 'periodic' if you want the traders' assignments to all arrive simultaneously & periodically
                 #               'interval': 30, 'timemode': 'periodic'}
-                buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
-                sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
+                buyers_spec = [('GVWY',optimalAgentCount[0]),('SHVR',optimalAgentCount[1]),('ZIC',optimalAgentCount[2]),('ZIP',optimalAgentCount[3])]
+                sellers_spec = [('GVWY',optimalAgentCount[4]),('SHVR',optimalAgentCount[5]),('ZIC',optimalAgentCount[6]),('ZIP',optimalAgentCount[7])]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
                 trialRun = (market_session(trial_id, start_time, lowerTime, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
@@ -2267,8 +2432,8 @@ if __name__ == "__main__":
 
                 order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
                             'interval': 30, 'timemode': 'drip-poisson'}
-                buyers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
-                sellers_spec = [('GVWY',optimalAgentCount),('SHVR',optimalAgentCount),('ZIC',optimalAgentCount),('ZIP',optimalAgentCount)]
+                buyers_spec = [('GVWY',optimalAgentCount[0]),('SHVR',optimalAgentCount[1]),('ZIC',optimalAgentCount[2]),('ZIP',optimalAgentCount[3])]
+                sellers_spec = [('GVWY',optimalAgentCount[4]),('SHVR',optimalAgentCount[5]),('ZIC',optimalAgentCount[6]),('ZIP',optimalAgentCount[7])]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
                 trialRun = (market_session(trial_id, start_time, upperTime, traders_spec, order_sched, tdump, dump_all, verbose))
                 trials.append(trialRun)
@@ -2300,64 +2465,35 @@ if __name__ == "__main__":
                 dump_all = False
             else:
                 dump_all = True
-            # first ever experiment
-            # if trial == 5:
-            #     trialRun = (market_session(trial_id, start_time, end_time, traders_spec, order_sched, tdump, dump_all, verbose))
-            #     trials.append(trialRun)
-            #     trialsProfts.append(trialRun[1])
-            #     highestRun = trialRun[1]
-            #     initialRun = trialRun[1]
-            # # logic for checking total profit goes here and optimisation
-            # el
-            # upperTime = end_time
-            # lowerTime = end_time
-            # amountUpper = 50
-            # amountLower = 50
-        
-            # explore reducing
-            # if lowerTime > 0 and lessTime:
-            # agentCap 
             agentCap = Agent*2
             timeCap = end_time*2
-            buygnwycount = random.randint(1, agentCap)
+            buygvwycount = random.randint(1, agentCap)
             buyshvrcount = random.randint(1, agentCap) 
             buyziccount = random.randint(1, agentCap) 
             buyzipcount = random.randint(1, agentCap) 
-            sellgnwycount = random.randint(1, agentCap) 
+            sellgvwycount = random.randint(1, agentCap) 
             sellshvrcount = random.randint(1, agentCap) 
             sellziccount = random.randint(1, agentCap) 
             sellzipcount = random.randint(1, agentCap)
-            newTime = random.randint(end_time/2, timeCap)
-            # lowerTime -= amountLower
-            # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-
+            newTime = random.randint(end_time//2, timeCap)
             range1 = (50, 150)
             supply_schedule = [{'from': start_time, 'to': newTime, 'ranges': [range1], 'stepmode': 'fixed'}
                             ]
-
             range2 = (50, 150)
             demand_schedule = [{'from': start_time, 'to': newTime, 'ranges': [range2], 'stepmode': 'fixed'}
                             ]
 
             order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
                         'interval': 30, 'timemode': 'drip-poisson'}
-            # Use 'periodic' if you want the traders' assignments to all arrive simultaneously & periodically
-            #               'interval': 30, 'timemode': 'periodic'}
-            buyers_spec = [('GVWY',buygnwycount),('SHVR',buyshvrcount),('ZIC',buyziccount),('ZIP',buyzipcount)]
-            sellers_spec = [('GVWY',sellgnwycount),('SHVR',sellshvrcount),('ZIC',sellziccount),('ZIP',sellzipcount)]
+            buyers_spec = [('GVWY',buygvwycount),('SHVR',buyshvrcount),('ZIC',buyziccount),('ZIP',buyzipcount)]
+            sellers_spec = [('GVWY',sellgvwycount),('SHVR',sellshvrcount),('ZIC',sellziccount),('ZIP',sellzipcount)]
             traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
             trialRun = (market_session(trial_id, start_time, newTime, traders_spec, order_sched, tdump, dump_all, verbose))
             trials.append(trialRun)
             trialsProfts.append(trialRun[1])
             if trialRun[1] > geneticHighestRun:
-                # lowerTime += amountLower
-                # amountLower = amountLower / 2
-                # print()
                 geneticHighestRun = trialRun[1]
-                geneticOutputs = f'Buy GNWY count: {buygnwycount}, BUY SHVR count: {buyshvrcount}, BUY ZIC count: {buyziccount}, BUY ZIP count{buyzipcount} \nSell GNWY count: {sellgnwycount}, Sell SHVR count {sellshvrcount}, Sell ZIC count {sellzipcount}, Sell ZIP count {sellzipcount}, End time: {newTime}'        
-            # trial += 1
-                
-                # explore increasing
+                geneticOutputs = f'Buy GVWY count: {buygvwycount}, BUY SHVR count: {buyshvrcount}, BUY ZIC count: {buyziccount}, BUY ZIP count: {buyzipcount} \nSell GVWY count: {sellgvwycount}, Sell SHVR count {sellshvrcount}, Sell ZIC count {sellzipcount}, Sell ZIP count {sellzipcount}, End time: {newTime}'
             tdump.flush()
             trial = trial + 1
             i += 1
@@ -2365,9 +2501,13 @@ if __name__ == "__main__":
         # print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
         # print(f'Optimal agent count is {optimalAgentCount} with {optimalTime} seconds, with highest profit of {highestRun} compared to {initialRun} with initial count of {initialAgentCount} agents and {initialTime} seconds')
 
-        # print(f'Highest genetic run {geneticHighestRun}. Configuration: \n{geneticOutputs}')
-        print(f'{initialRun},{highestRun},{geneticHighestRun}')
+        
+        print(f'Initial run: {initialRun}, Local Search highest: {highestRun}, Random Search highest: {geneticHighestRun}')
+        print(f'Local search Configuration:\nBuy GVWY count: {optimalAgentCount[0]}, Buy SHVR count: {optimalAgentCount[1]}, Buy ZIC count: {optimalAgentCount[2]}, Buy ZIP count: {optimalAgentCount[3]}\nSell GVWY count: {optimalAgentCount[4]}, Sell SHVR count: {optimalAgentCount[5]}, Sell ZIC count: {optimalAgentCount[6]}, Sell ZIP count: {optimalAgentCount[7]}\nEnd time: {optimalTime}\n')
+        print(f'Random Search Configuration: \n{geneticOutputs}')
         tdump.close()
+
+    
         
         # run a sequence of trials that exhaustively varies the ratio of four trader types
         # NB this has weakness of symmetric proportions on buyers/sellers -- combinatorics of varying that are quite nasty
