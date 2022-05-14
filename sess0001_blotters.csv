@@ -1,489 +1,59 @@
 B00, 0
-B01, 0
-B02, 0
-B03, 0
-B04, 0
-B05, 0
-B06, 0
-B07, 0
-B08, 0
-B09, 1
-B09, Blotteritem, {'type': 'Trade', 'time': 395.4776119401111, 'price': 83, 'party1': 'B09', 'party2': 'S00', 'qty': 1}
-B10, 10
-B10, Blotteritem, {'type': 'Trade', 'time': 39.46268656716301, 'price': 86, 'party1': 'B10', 'party2': 'S02', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 66.41791044775523, 'price': 84, 'party1': 'B10', 'party2': 'S08', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 131.4925373134435, 'price': 87, 'party1': 'B10', 'party2': 'S08', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 141.4179104477744, 'price': 86, 'party1': 'B10', 'party2': 'S03', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 159.19402985076403, 'price': 87, 'party1': 'B10', 'party2': 'S03', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 214.17910447764376, 'price': 85, 'party1': 'B10', 'party2': 'S09', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 277.7462686567231, 'price': 87, 'party1': 'B10', 'party2': 'S00', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 316.50746268650994, 'price': 86, 'party1': 'B10', 'party2': 'S00', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 353.7910447760007, 'price': 85, 'party1': 'B10', 'party2': 'S09', 'qty': 1}
-B10, Blotteritem, {'type': 'Trade', 'time': 407.7164179102402, 'price': 86, 'party1': 'S02', 'party2': 'B10', 'qty': 1}
-B11, 8
-B11, Blotteritem, {'type': 'Trade', 'time': 90.38805970149271, 'price': 84, 'party1': 'B11', 'party2': 'S04', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 120.86567164179901, 'price': 91, 'party1': 'B11', 'party2': 'S16', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 148.97014925374648, 'price': 88, 'party1': 'B11', 'party2': 'S07', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 231.3134328358571, 'price': 89, 'party1': 'B11', 'party2': 'S11', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 276.9850746268736, 'price': 88, 'party1': 'B11', 'party2': 'S03', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 291.46268656714824, 'price': 87, 'party1': 'B11', 'party2': 'S13', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 336.6119402984171, 'price': 85, 'party1': 'B11', 'party2': 'S03', 'qty': 1}
-B11, Blotteritem, {'type': 'Trade', 'time': 395.98507462667743, 'price': 82, 'party1': 'B11', 'party2': 'S07', 'qty': 1}
-B12, 13
-B12, Blotteritem, {'type': 'Trade', 'time': 30.402985074627313, 'price': 89, 'party1': 'S11', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 55.59701492536841, 'price': 86, 'party1': 'S01', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 95.41791044776265, 'price': 91.0, 'party1': 'S16', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 142.8507462686703, 'price': 89, 'party1': 'S02', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 177.3134328358433, 'price': 87, 'party1': 'S11', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 215.8656716418233, 'price': 85.999, 'party1': 'S06', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 228.17910447764734, 'price': 91.0, 'party1': 'S16', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 277.7611940298574, 'price': 90, 'party1': 'S13', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 310.8059701492059, 'price': 87.99799999999999, 'party1': 'S06', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 334.89552238797216, 'price': 88, 'party1': 'S15', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 377.8955223879013, 'price': 84.99399999999997, 'party1': 'S10', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 404.49253731323057, 'price': 86, 'party1': 'S05', 'party2': 'B12', 'qty': 1}
-B12, Blotteritem, {'type': 'Trade', 'time': 432.4776119400501, 'price': 88, 'party1': 'S15', 'party2': 'B12', 'qty': 1}
-B13, 15
-B13, Blotteritem, {'type': 'Trade', 'time': 10.402985074626958, 'price': 69.01200000000006, 'party1': 'B13', 'party2': 'S03', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 54.895522388055134, 'price': 85.001, 'party1': 'B13', 'party2': 'S00', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 79.44776119402722, 'price': 86.01400000000007, 'party1': 'B13', 'party2': 'S13', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 104.44776119403362, 'price': 96.001, 'party1': 'B13', 'party2': 'S01', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 130.07462686568195, 'price': 96.00600000000003, 'party1': 'B13', 'party2': 'S11', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 176.64179104479834, 'price': 85.01600000000008, 'party1': 'B13', 'party2': 'S05', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 199.59701492540123, 'price': 86.01800000000009, 'party1': 'B13', 'party2': 'S04', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 235.6716417910821, 'price': 90.00300000000001, 'party1': 'B13', 'party2': 'S07', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 250.58208955227994, 'price': 92.001, 'party1': 'B13', 'party2': 'S11', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 294.8358208955009, 'price': 85.00700000000003, 'party1': 'B13', 'party2': 'S14', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 329.432835820817, 'price': 85.001, 'party1': 'B13', 'party2': 'S08', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 345.52238805959644, 'price': 85.00200000000001, 'party1': 'B13', 'party2': 'S14', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 379.5074626864061, 'price': 84.0620000000003, 'party1': 'B13', 'party2': 'S03', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 412.9402985072465, 'price': 87.001, 'party1': 'B13', 'party2': 'S08', 'qty': 1}
-B13, Blotteritem, {'type': 'Trade', 'time': 426.3731343281199, 'price': 86.02600000000012, 'party1': 'B13', 'party2': 'S11', 'qty': 1}
-B14, 13
-B14, Blotteritem, {'type': 'Trade', 'time': 22.85074626865703, 'price': 90, 'party1': 'S13', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 56.40298507462197, 'price': 87, 'party1': 'S11', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 86.79104477611865, 'price': 86, 'party1': 'S05', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 133.2089552238917, 'price': 92.999, 'party1': 'S10', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 168.62686567166196, 'price': 87, 'party1': 'S02', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 189.1940298507717, 'price': 87, 'party1': 'S14', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 255.97014925377385, 'price': 93, 'party1': 'S01', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 294.28358208953165, 'price': 85.99799999999999, 'party1': 'S10', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 330.04477611932344, 'price': 87, 'party1': 'S11', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 361.6268656715102, 'price': 86.999, 'party1': 'S10', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 368.5373134326928, 'price': 86, 'party1': 'S02', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 395.31343283563376, 'price': 91.0, 'party1': 'S16', 'party2': 'B14', 'qty': 1}
-B14, Blotteritem, {'type': 'Trade', 'time': 428.0895522385648, 'price': 86.99299999999997, 'party1': 'S06', 'party2': 'B14', 'qty': 1}
-B15, 7
-B15, Blotteritem, {'type': 'Trade', 'time': 8.43283582089558, 'price': 88, 'party1': 'S14', 'party2': 'B15', 'qty': 1}
-B15, Blotteritem, {'type': 'Trade', 'time': 120.50746268657504, 'price': 98, 'party1': 'B15', 'party2': 'S11', 'qty': 1}
-B15, Blotteritem, {'type': 'Trade', 'time': 163.65671641792935, 'price': 86, 'party1': 'B15', 'party2': 'S07', 'qty': 1}
-B15, Blotteritem, {'type': 'Trade', 'time': 216.01492537316662, 'price': 85, 'party1': 'B15', 'party2': 'S01', 'qty': 1}
-B15, Blotteritem, {'type': 'Trade', 'time': 240.01492537317276, 'price': 91, 'party1': 'B15', 'party2': 'S16', 'qty': 1}
-B15, Blotteritem, {'type': 'Trade', 'time': 265.64179104480274, 'price': 91.0, 'party1': 'S16', 'party2': 'B15', 'qty': 1}
-B15, Blotteritem, {'type': 'Trade', 'time': 280.6119402985094, 'price': 89, 'party1': 'B15', 'party2': 'S02', 'qty': 1}
-B16, 12
-B16, Blotteritem, {'type': 'Trade', 'time': 1.85074626865672, 'price': 80, 'party1': 'B16', 'party2': 'S01', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 61.05970149253139, 'price': 85, 'party1': 'B16', 'party2': 'S09', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 91.20895522388098, 'price': 84, 'party1': 'B16', 'party2': 'S03', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 111.64179104478173, 'price': 99, 'party1': 'B16', 'party2': 'S08', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 131.34328358210018, 'price': 96, 'party1': 'B16', 'party2': 'S14', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 177.19402985076863, 'price': 84, 'party1': 'B16', 'party2': 'S13', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 196.53731343286313, 'price': 87, 'party1': 'B16', 'party2': 'S07', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 233.80597014929057, 'price': 93, 'party1': 'B16', 'party2': 'S01', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 255.2089552239229, 'price': 92, 'party1': 'B16', 'party2': 'S04', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 291.98507462684887, 'price': 86, 'party1': 'B16', 'party2': 'S08', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 352.5223880595849, 'price': 85, 'party1': 'B16', 'party2': 'S07', 'qty': 1}
-B16, Blotteritem, {'type': 'Trade', 'time': 401.8059701490559, 'price': 83, 'party1': 'B16', 'party2': 'S09', 'qty': 1}
-B17, 15
-B17, Blotteritem, {'type': 'Trade', 'time': 7.477611940298549, 'price': 90.99799999999999, 'party1': 'S06', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 54.64179104477161, 'price': 86, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 64.94029850745635, 'price': 88, 'party1': 'S15', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 119.7014925373211, 'price': 98.99199999999996, 'party1': 'S10', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 124.29850746269541, 'price': 102, 'party1': 'S15', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 177.44776119405228, 'price': 91.0, 'party1': 'S16', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 182.31343283584457, 'price': 88, 'party1': 'S02', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 235.56716417914177, 'price': 98, 'party1': 'S19', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 262.5820895522705, 'price': 94, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 294.9253731343067, 'price': 86, 'party1': 'S01', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 324.02985074619903, 'price': 87, 'party1': 'S01', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 336.86567164170026, 'price': 88, 'party1': 'S01', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 378.11940298491584, 'price': 85, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 399.0149253729411, 'price': 87, 'party1': 'S13', 'party2': 'B17', 'qty': 1}
-B17, Blotteritem, {'type': 'Trade', 'time': 440.16417910421654, 'price': 88, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-B18, 14
-B18, Blotteritem, {'type': 'Trade', 'time': 18.6119402985077, 'price': 77.001, 'party1': 'B18', 'party2': 'S05', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 32.56716417910483, 'price': 85.00800000000004, 'party1': 'B18', 'party2': 'S03', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 82.46268656716232, 'price': 86.00300000000001, 'party1': 'B18', 'party2': 'S11', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 120.04477611941074, 'price': 99.001, 'party1': 'B18', 'party2': 'S14', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 130.85074626866722, 'price': 96.00600000000003, 'party1': 'B18', 'party2': 'S16', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 191.5074626865932, 'price': 87.001, 'party1': 'B18', 'party2': 'S14', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 211.43283582092664, 'price': 86.00500000000002, 'party1': 'B18', 'party2': 'S04', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 235.46268656720144, 'price': 90.00400000000002, 'party1': 'B18', 'party2': 'S08', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 250.44776119407095, 'price': 92.00300000000001, 'party1': 'B18', 'party2': 'S05', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 300.7910447760881, 'price': 85.01200000000006, 'party1': 'B18', 'party2': 'S04', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 310.91044776114603, 'price': 87.00600000000003, 'party1': 'B18', 'party2': 'S09', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 367.5522388058288, 'price': 84.03500000000017, 'party1': 'B18', 'party2': 'S08', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 410.9701492535184, 'price': 87.00400000000002, 'party1': 'B18', 'party2': 'S04', 'qty': 1}
-B18, Blotteritem, {'type': 'Trade', 'time': 426.4179104475228, 'price': 86.02500000000012, 'party1': 'B18', 'party2': 'S03', 'qty': 1}
-B19, 14
-B19, Blotteritem, {'type': 'Trade', 'time': 18.044776119403213, 'price': 89, 'party1': 'S15', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 53.61194029850318, 'price': 85.99099999999996, 'party1': 'S06', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 91.97014925373192, 'price': 86, 'party1': 'S14', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 119.83582089553009, 'price': 98.99399999999997, 'party1': 'S06', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 154.8208955224047, 'price': 89, 'party1': 'S15', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 200.7014925373418, 'price': 88, 'party1': 'S11', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 218.94029850749573, 'price': 84.99599999999998, 'party1': 'S10', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 247.76119402989116, 'price': 92, 'party1': 'S14', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 301.43283582086315, 'price': 88, 'party1': 'S15', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 330.2089552238008, 'price': 87.999, 'party1': 'S10', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 359.2537313431559, 'price': 85, 'party1': 'S11', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 389.26865671624074, 'price': 84, 'party1': 'S02', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 398.7462686565236, 'price': 87, 'party1': 'S01', 'party2': 'B19', 'qty': 1}
-B19, Blotteritem, {'type': 'Trade', 'time': 425.7014925370762, 'price': 86.99499999999998, 'party1': 'S10', 'party2': 'B19', 'qty': 1}
-B20, 14
-B20, Blotteritem, {'type': 'Trade', 'time': 12.208955223880722, 'price': 69.01600000000008, 'party1': 'B20', 'party2': 'S07', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 49.32835820895188, 'price': 85.02400000000011, 'party1': 'B20', 'party2': 'S05', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 73.95522388059298, 'price': 86.00600000000003, 'party1': 'B20', 'party2': 'S09', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 108.65671641791529, 'price': 99.00900000000004, 'party1': 'B20', 'party2': 'S03', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 138.97014925374393, 'price': 86.00200000000001, 'party1': 'B20', 'party2': 'S04', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 157.20895522389785, 'price': 87.00200000000001, 'party1': 'B20', 'party2': 'S09', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 192.38805970151878, 'price': 86.01600000000008, 'party1': 'B20', 'party2': 'S08', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 232.522388059738, 'price': 92.001, 'party1': 'B20', 'party2': 'S13', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 266.82089552241274, 'price': 87.01700000000008, 'party1': 'B20', 'party2': 'S09', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 289.08955223879394, 'price': 87.00800000000004, 'party1': 'B20', 'party2': 'S05', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 325.0895522387346, 'price': 86.00200000000001, 'party1': 'B20', 'party2': 'S07', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 362.9104477610603, 'price': 84.0220000000001, 'party1': 'B20', 'party2': 'S00', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 378.4179104476019, 'price': 84.0630000000003, 'party1': 'B20', 'party2': 'S11', 'qty': 1}
-B20, Blotteritem, {'type': 'Trade', 'time': 411.4477611938161, 'price': 87.00200000000001, 'party1': 'B20', 'party2': 'S11', 'qty': 1}
-B21, 14
-B21, Blotteritem, {'type': 'Trade', 'time': 19.80597014925399, 'price': 91.0, 'party1': 'S16', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 58.373134328352876, 'price': 87, 'party1': 'S13', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 78.94029850745993, 'price': 86.98099999999991, 'party1': 'S10', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 103.95522388060066, 'price': 93, 'party1': 'S02', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 138.79104477613194, 'price': 89.999, 'party1': 'S06', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 176.07462686569372, 'price': 85.99699999999999, 'party1': 'S06', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 192.79104477614575, 'price': 87.99499999999998, 'party1': 'S10', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 227.67164179108005, 'price': 88, 'party1': 'S15', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 252.59701492541478, 'price': 94.999, 'party1': 'S06', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 295.47761194027595, 'price': 86, 'party1': 'S11', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 326.05970149246434, 'price': 87, 'party1': 'S13', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 345.2985074625819, 'price': 86, 'party1': 'S13', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 392.41791044757883, 'price': 84, 'party1': 'S05', 'party2': 'B21', 'qty': 1}
-B21, Blotteritem, {'type': 'Trade', 'time': 403.58208955203804, 'price': 86, 'party1': 'S14', 'party2': 'B21', 'qty': 1}
-B22, 13
-B22, Blotteritem, {'type': 'Trade', 'time': 25.00000000000035, 'price': 82.001, 'party1': 'B22', 'party2': 'S02', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 52.70149253730935, 'price': 85.03100000000015, 'party1': 'B22', 'party2': 'S07', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 79.3432835820869, 'price': 86.01600000000008, 'party1': 'B22', 'party2': 'S01', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 110.80597014925912, 'price': 99.01100000000005, 'party1': 'B22', 'party2': 'S05', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 156.13432835822593, 'price': 87.01100000000005, 'party1': 'B22', 'party2': 'S00', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 213.2238805970465, 'price': 86.00600000000003, 'party1': 'B22', 'party2': 'S03', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 222.53731343286978, 'price': 84.01000000000005, 'party1': 'B22', 'party2': 'S00', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 275.98507462687525, 'price': 89.00200000000001, 'party1': 'B22', 'party2': 'S09', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 290.29850746267255, 'price': 87.00600000000003, 'party1': 'B22', 'party2': 'S07', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 312.7611940297997, 'price': 87.00400000000002, 'party1': 'B22', 'party2': 'S03', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 373.9701492535794, 'price': 84.05500000000026, 'party1': 'B22', 'party2': 'S04', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 387.0447761192295, 'price': 84.00800000000004, 'party1': 'B22', 'party2': 'S07', 'qty': 1}
-B22, Blotteritem, {'type': 'Trade', 'time': 405.8507462684522, 'price': 82.00200000000001, 'party1': 'B22', 'party2': 'S03', 'qty': 1}
-B23, 11
-B23, Blotteritem, {'type': 'Trade', 'time': 4.731343283582082, 'price': 101, 'party1': 'B23', 'party2': 'S09', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 88.35820895522353, 'price': 85, 'party1': 'B23', 'party2': 'S07', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 94.65671641791171, 'price': 88, 'party1': 'S15', 'party2': 'B23', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 105.89552238806384, 'price': 100, 'party1': 'B23', 'party2': 'S13', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 135.97014925374316, 'price': 91, 'party1': 'S05', 'party2': 'B23', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 194.92537313435525, 'price': 87, 'party1': 'B23', 'party2': 'S12', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 216.1940298507786, 'price': 85, 'party1': 'B23', 'party2': 'S03', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 232.9402985074993, 'price': 93, 'party1': 'B23', 'party2': 'S02', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 311.6716417909955, 'price': 87, 'party1': 'B23', 'party2': 'S14', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 346.82089552228086, 'price': 85, 'party1': 'B23', 'party2': 'S08', 'qty': 1}
-B23, Blotteritem, {'type': 'Trade', 'time': 395.8955223878716, 'price': 82, 'party1': 'B23', 'party2': 'S04', 'qty': 1}
-B24, 12
-B24, Blotteritem, {'type': 'Trade', 'time': 29.35820895522431, 'price': 85.00700000000003, 'party1': 'B24', 'party2': 'S00', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 46.328358208952544, 'price': 85.01700000000008, 'party1': 'B24', 'party2': 'S08', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 71.16417910447286, 'price': 85.00300000000001, 'party1': 'B24', 'party2': 'S02', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 103.791044776123, 'price': 92.00300000000001, 'party1': 'B24', 'party2': 'S09', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 155.104477611957, 'price': 87.01200000000006, 'party1': 'B24', 'party2': 'S08', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 158.23880597016677, 'price': 87.00200000000001, 'party1': 'B24', 'party2': 'S04', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 190.76119402987658, 'price': 86.01300000000006, 'party1': 'B24', 'party2': 'S00', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 241.86567164182995, 'price': 87.00800000000004, 'party1': 'B24', 'party2': 'S08', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 263.4776119403287, 'price': 87.01600000000008, 'party1': 'B24', 'party2': 'S03', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 314.8208955223336, 'price': 87.00800000000004, 'party1': 'B24', 'party2': 'S02', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 358.5522388058436, 'price': 84.01000000000005, 'party1': 'B24', 'party2': 'S05', 'qty': 1}
-B24, Blotteritem, {'type': 'Trade', 'time': 372.59701492522345, 'price': 84.05100000000024, 'party1': 'B24', 'party2': 'S01', 'qty': 1}
-B25, 14
-B25, Blotteritem, {'type': 'Trade', 'time': 12.731343283582223, 'price': 70.0, 'party1': 'S08', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 54.38805970148808, 'price': 85.99099999999996, 'party1': 'S10', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 84.52238805970016, 'price': 86.97399999999988, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 99.23880597015169, 'price': 98, 'party1': 'S19', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 122.74626865672487, 'price': 101, 'party1': 'S01', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 165.59701492539253, 'price': 87.99599999999998, 'party1': 'S10', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 198.9402985074906, 'price': 88, 'party1': 'S13', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 225.40298507466156, 'price': 85, 'party1': 'S05', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 255.82089552243053, 'price': 92.99699999999999, 'party1': 'S10', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 296.0298507462452, 'price': 86.999, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 301.2686567163858, 'price': 87, 'party1': 'S02', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 358.1194029849488, 'price': 84.99499999999998, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 388.3731343281825, 'price': 83.99799999999999, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-B25, Blotteritem, {'type': 'Trade', 'time': 392.6567164177277, 'price': 88, 'party1': 'S15', 'party2': 'B25', 'qty': 1}
-B26, 11
-B26, Blotteritem, {'type': 'Trade', 'time': 32.10447761194075, 'price': 85.00900000000004, 'party1': 'B26', 'party2': 'S04', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 53.99999999999563, 'price': 85.03400000000016, 'party1': 'B26', 'party2': 'S04', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 82.98507462686395, 'price': 86.001, 'party1': 'B26', 'party2': 'S12', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 101.26865671642086, 'price': 92.00200000000001, 'party1': 'B26', 'party2': 'S07', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 149.73134328359743, 'price': 83.00400000000002, 'party1': 'B26', 'party2': 'S09', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 176.08955223882805, 'price': 85.01700000000008, 'party1': 'B26', 'party2': 'S01', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 203.68656716420824, 'price': 86.02500000000012, 'party1': 'B26', 'party2': 'S09', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 248.8059701492944, 'price': 87.00800000000004, 'party1': 'B26', 'party2': 'S07', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 314.11940298502134, 'price': 87.00600000000003, 'party1': 'B26', 'party2': 'S05', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 380.7014925371504, 'price': 84.0630000000003, 'party1': 'B26', 'party2': 'S13', 'qty': 1}
-B26, Blotteritem, {'type': 'Trade', 'time': 391.0149253729543, 'price': 83.00300000000001, 'party1': 'B26', 'party2': 'S09', 'qty': 1}
-S00, 9
-S00, Blotteritem, {'type': 'Trade', 'time': 29.35820895522431, 'price': 85.00700000000003, 'party1': 'B24', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 54.895522388055134, 'price': 85.001, 'party1': 'B13', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 156.13432835822593, 'price': 87.01100000000005, 'party1': 'B22', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 190.76119402987658, 'price': 86.01300000000006, 'party1': 'B24', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 222.53731343286978, 'price': 84.01000000000005, 'party1': 'B22', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 277.7462686567231, 'price': 87, 'party1': 'B10', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 316.50746268650994, 'price': 86, 'party1': 'B10', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 362.9104477610603, 'price': 84.0220000000001, 'party1': 'B20', 'party2': 'S00', 'qty': 1}
-S00, Blotteritem, {'type': 'Trade', 'time': 395.4776119401111, 'price': 83, 'party1': 'B09', 'party2': 'S00', 'qty': 1}
-S01, 14
-S01, Blotteritem, {'type': 'Trade', 'time': 1.85074626865672, 'price': 80, 'party1': 'B16', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 55.59701492536841, 'price': 86, 'party1': 'S01', 'party2': 'B12', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 79.3432835820869, 'price': 86.01600000000008, 'party1': 'B22', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 104.44776119403362, 'price': 96.001, 'party1': 'B13', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 122.74626865672487, 'price': 101, 'party1': 'S01', 'party2': 'B25', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 176.08955223882805, 'price': 85.01700000000008, 'party1': 'B26', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 216.01492537316662, 'price': 85, 'party1': 'B15', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 233.80597014929057, 'price': 93, 'party1': 'B16', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 255.97014925377385, 'price': 93, 'party1': 'S01', 'party2': 'B14', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 294.9253731343067, 'price': 86, 'party1': 'S01', 'party2': 'B17', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 324.02985074619903, 'price': 87, 'party1': 'S01', 'party2': 'B17', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 336.86567164170026, 'price': 88, 'party1': 'S01', 'party2': 'B17', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 372.59701492522345, 'price': 84.05100000000024, 'party1': 'B24', 'party2': 'S01', 'qty': 1}
-S01, Blotteritem, {'type': 'Trade', 'time': 398.7462686565236, 'price': 87, 'party1': 'S01', 'party2': 'B19', 'qty': 1}
-S02, 14
-S02, Blotteritem, {'type': 'Trade', 'time': 25.00000000000035, 'price': 82.001, 'party1': 'B22', 'party2': 'S02', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 39.46268656716301, 'price': 86, 'party1': 'B10', 'party2': 'S02', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 71.16417910447286, 'price': 85.00300000000001, 'party1': 'B24', 'party2': 'S02', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 103.95522388060066, 'price': 93, 'party1': 'S02', 'party2': 'B21', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 142.8507462686703, 'price': 89, 'party1': 'S02', 'party2': 'B12', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 168.62686567166196, 'price': 87, 'party1': 'S02', 'party2': 'B14', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 182.31343283584457, 'price': 88, 'party1': 'S02', 'party2': 'B17', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 232.9402985074993, 'price': 93, 'party1': 'B23', 'party2': 'S02', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 280.6119402985094, 'price': 89, 'party1': 'B15', 'party2': 'S02', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 301.2686567163858, 'price': 87, 'party1': 'S02', 'party2': 'B25', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 314.8208955223336, 'price': 87.00800000000004, 'party1': 'B24', 'party2': 'S02', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 368.5373134326928, 'price': 86, 'party1': 'S02', 'party2': 'B14', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 389.26865671624074, 'price': 84, 'party1': 'S02', 'party2': 'B19', 'qty': 1}
-S02, Blotteritem, {'type': 'Trade', 'time': 407.7164179102402, 'price': 86, 'party1': 'S02', 'party2': 'B10', 'qty': 1}
-S03, 15
-S03, Blotteritem, {'type': 'Trade', 'time': 10.402985074626958, 'price': 69.01200000000006, 'party1': 'B13', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 32.56716417910483, 'price': 85.00800000000004, 'party1': 'B18', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 91.20895522388098, 'price': 84, 'party1': 'B16', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 108.65671641791529, 'price': 99.00900000000004, 'party1': 'B20', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 141.4179104477744, 'price': 86, 'party1': 'B10', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 159.19402985076403, 'price': 87, 'party1': 'B10', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 213.2238805970465, 'price': 86.00600000000003, 'party1': 'B22', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 216.1940298507786, 'price': 85, 'party1': 'B23', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 263.4776119403287, 'price': 87.01600000000008, 'party1': 'B24', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 276.9850746268736, 'price': 88, 'party1': 'B11', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 312.7611940297997, 'price': 87.00400000000002, 'party1': 'B22', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 336.6119402984171, 'price': 85, 'party1': 'B11', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 379.5074626864061, 'price': 84.0620000000003, 'party1': 'B13', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 405.8507462684522, 'price': 82.00200000000001, 'party1': 'B22', 'party2': 'S03', 'qty': 1}
-S03, Blotteritem, {'type': 'Trade', 'time': 426.4179104475228, 'price': 86.02500000000012, 'party1': 'B18', 'party2': 'S03', 'qty': 1}
-S04, 12
-S04, Blotteritem, {'type': 'Trade', 'time': 32.10447761194075, 'price': 85.00900000000004, 'party1': 'B26', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 53.99999999999563, 'price': 85.03400000000016, 'party1': 'B26', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 90.38805970149271, 'price': 84, 'party1': 'B11', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 138.97014925374393, 'price': 86.00200000000001, 'party1': 'B20', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 158.23880597016677, 'price': 87.00200000000001, 'party1': 'B24', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 199.59701492540123, 'price': 86.01800000000009, 'party1': 'B13', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 211.43283582092664, 'price': 86.00500000000002, 'party1': 'B18', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 255.2089552239229, 'price': 92, 'party1': 'B16', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 300.7910447760881, 'price': 85.01200000000006, 'party1': 'B18', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 373.9701492535794, 'price': 84.05500000000026, 'party1': 'B22', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 395.8955223878716, 'price': 82, 'party1': 'B23', 'party2': 'S04', 'qty': 1}
-S04, Blotteritem, {'type': 'Trade', 'time': 410.9701492535184, 'price': 87.00400000000002, 'party1': 'B18', 'party2': 'S04', 'qty': 1}
-S05, 13
-S05, Blotteritem, {'type': 'Trade', 'time': 18.6119402985077, 'price': 77.001, 'party1': 'B18', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 49.32835820895188, 'price': 85.02400000000011, 'party1': 'B20', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 86.79104477611865, 'price': 86, 'party1': 'S05', 'party2': 'B14', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 110.80597014925912, 'price': 99.01100000000005, 'party1': 'B22', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 135.97014925374316, 'price': 91, 'party1': 'S05', 'party2': 'B23', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 176.64179104479834, 'price': 85.01600000000008, 'party1': 'B13', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 225.40298507466156, 'price': 85, 'party1': 'S05', 'party2': 'B25', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 250.44776119407095, 'price': 92.00300000000001, 'party1': 'B18', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 289.08955223879394, 'price': 87.00800000000004, 'party1': 'B20', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 314.11940298502134, 'price': 87.00600000000003, 'party1': 'B26', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 358.5522388058436, 'price': 84.01000000000005, 'party1': 'B24', 'party2': 'S05', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 392.41791044757883, 'price': 84, 'party1': 'S05', 'party2': 'B21', 'qty': 1}
-S05, Blotteritem, {'type': 'Trade', 'time': 404.49253731323057, 'price': 86, 'party1': 'S05', 'party2': 'B12', 'qty': 1}
-S06, 13
-S06, Blotteritem, {'type': 'Trade', 'time': 7.477611940298549, 'price': 90.99799999999999, 'party1': 'S06', 'party2': 'B17', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 53.61194029850318, 'price': 85.99099999999996, 'party1': 'S06', 'party2': 'B19', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 84.52238805970016, 'price': 86.97399999999988, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 119.83582089553009, 'price': 98.99399999999997, 'party1': 'S06', 'party2': 'B19', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 138.79104477613194, 'price': 89.999, 'party1': 'S06', 'party2': 'B21', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 176.07462686569372, 'price': 85.99699999999999, 'party1': 'S06', 'party2': 'B21', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 215.8656716418233, 'price': 85.999, 'party1': 'S06', 'party2': 'B12', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 252.59701492541478, 'price': 94.999, 'party1': 'S06', 'party2': 'B21', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 296.0298507462452, 'price': 86.999, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 310.8059701492059, 'price': 87.99799999999999, 'party1': 'S06', 'party2': 'B12', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 358.1194029849488, 'price': 84.99499999999998, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 388.3731343281825, 'price': 83.99799999999999, 'party1': 'S06', 'party2': 'B25', 'qty': 1}
-S06, Blotteritem, {'type': 'Trade', 'time': 428.0895522385648, 'price': 86.99299999999997, 'party1': 'S06', 'party2': 'B14', 'qty': 1}
-S07, 14
-S07, Blotteritem, {'type': 'Trade', 'time': 12.208955223880722, 'price': 69.01600000000008, 'party1': 'B20', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 52.70149253730935, 'price': 85.03100000000015, 'party1': 'B22', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 88.35820895522353, 'price': 85, 'party1': 'B23', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 101.26865671642086, 'price': 92.00200000000001, 'party1': 'B26', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 148.97014925374648, 'price': 88, 'party1': 'B11', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 163.65671641792935, 'price': 86, 'party1': 'B15', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 196.53731343286313, 'price': 87, 'party1': 'B16', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 235.6716417910821, 'price': 90.00300000000001, 'party1': 'B13', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 248.8059701492944, 'price': 87.00800000000004, 'party1': 'B26', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 290.29850746267255, 'price': 87.00600000000003, 'party1': 'B22', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 325.0895522387346, 'price': 86.00200000000001, 'party1': 'B20', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 352.5223880595849, 'price': 85, 'party1': 'B16', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 387.0447761192295, 'price': 84.00800000000004, 'party1': 'B22', 'party2': 'S07', 'qty': 1}
-S07, Blotteritem, {'type': 'Trade', 'time': 395.98507462667743, 'price': 82, 'party1': 'B11', 'party2': 'S07', 'qty': 1}
-S08, 14
-S08, Blotteritem, {'type': 'Trade', 'time': 12.731343283582223, 'price': 70.0, 'party1': 'S08', 'party2': 'B25', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 46.328358208952544, 'price': 85.01700000000008, 'party1': 'B24', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 66.41791044775523, 'price': 84, 'party1': 'B10', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 111.64179104478173, 'price': 99, 'party1': 'B16', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 131.4925373134435, 'price': 87, 'party1': 'B10', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 155.104477611957, 'price': 87.01200000000006, 'party1': 'B24', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 192.38805970151878, 'price': 86.01600000000008, 'party1': 'B20', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 235.46268656720144, 'price': 90.00400000000002, 'party1': 'B18', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 241.86567164182995, 'price': 87.00800000000004, 'party1': 'B24', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 291.98507462684887, 'price': 86, 'party1': 'B16', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 329.432835820817, 'price': 85.001, 'party1': 'B13', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 346.82089552228086, 'price': 85, 'party1': 'B23', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 367.5522388058288, 'price': 84.03500000000017, 'party1': 'B18', 'party2': 'S08', 'qty': 1}
-S08, Blotteritem, {'type': 'Trade', 'time': 412.9402985072465, 'price': 87.001, 'party1': 'B13', 'party2': 'S08', 'qty': 1}
-S09, 14
-S09, Blotteritem, {'type': 'Trade', 'time': 4.731343283582082, 'price': 101, 'party1': 'B23', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 61.05970149253139, 'price': 85, 'party1': 'B16', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 73.95522388059298, 'price': 86.00600000000003, 'party1': 'B20', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 103.791044776123, 'price': 92.00300000000001, 'party1': 'B24', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 149.73134328359743, 'price': 83.00400000000002, 'party1': 'B26', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 157.20895522389785, 'price': 87.00200000000001, 'party1': 'B20', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 203.68656716420824, 'price': 86.02500000000012, 'party1': 'B26', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 214.17910447764376, 'price': 85, 'party1': 'B10', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 266.82089552241274, 'price': 87.01700000000008, 'party1': 'B20', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 275.98507462687525, 'price': 89.00200000000001, 'party1': 'B22', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 310.91044776114603, 'price': 87.00600000000003, 'party1': 'B18', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 353.7910447760007, 'price': 85, 'party1': 'B10', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 391.0149253729543, 'price': 83.00300000000001, 'party1': 'B26', 'party2': 'S09', 'qty': 1}
-S09, Blotteritem, {'type': 'Trade', 'time': 401.8059701490559, 'price': 83, 'party1': 'B16', 'party2': 'S09', 'qty': 1}
-S10, 13
-S10, Blotteritem, {'type': 'Trade', 'time': 54.38805970148808, 'price': 85.99099999999996, 'party1': 'S10', 'party2': 'B25', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 78.94029850745993, 'price': 86.98099999999991, 'party1': 'S10', 'party2': 'B21', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 119.7014925373211, 'price': 98.99199999999996, 'party1': 'S10', 'party2': 'B17', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 133.2089552238917, 'price': 92.999, 'party1': 'S10', 'party2': 'B14', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 165.59701492539253, 'price': 87.99599999999998, 'party1': 'S10', 'party2': 'B25', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 192.79104477614575, 'price': 87.99499999999998, 'party1': 'S10', 'party2': 'B21', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 218.94029850749573, 'price': 84.99599999999998, 'party1': 'S10', 'party2': 'B19', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 255.82089552243053, 'price': 92.99699999999999, 'party1': 'S10', 'party2': 'B25', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 294.28358208953165, 'price': 85.99799999999999, 'party1': 'S10', 'party2': 'B14', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 330.2089552238008, 'price': 87.999, 'party1': 'S10', 'party2': 'B19', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 361.6268656715102, 'price': 86.999, 'party1': 'S10', 'party2': 'B14', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 377.8955223879013, 'price': 84.99399999999997, 'party1': 'S10', 'party2': 'B12', 'qty': 1}
-S10, Blotteritem, {'type': 'Trade', 'time': 425.7014925370762, 'price': 86.99499999999998, 'party1': 'S10', 'party2': 'B19', 'qty': 1}
-S11, 15
-S11, Blotteritem, {'type': 'Trade', 'time': 30.402985074627313, 'price': 89, 'party1': 'S11', 'party2': 'B12', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 56.40298507462197, 'price': 87, 'party1': 'S11', 'party2': 'B14', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 82.46268656716232, 'price': 86.00300000000001, 'party1': 'B18', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 120.50746268657504, 'price': 98, 'party1': 'B15', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 130.07462686568195, 'price': 96.00600000000003, 'party1': 'B13', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 177.3134328358433, 'price': 87, 'party1': 'S11', 'party2': 'B12', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 200.7014925373418, 'price': 88, 'party1': 'S11', 'party2': 'B19', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 231.3134328358571, 'price': 89, 'party1': 'B11', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 250.58208955227994, 'price': 92.001, 'party1': 'B13', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 295.47761194027595, 'price': 86, 'party1': 'S11', 'party2': 'B21', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 330.04477611932344, 'price': 87, 'party1': 'S11', 'party2': 'B14', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 359.2537313431559, 'price': 85, 'party1': 'S11', 'party2': 'B19', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 378.4179104476019, 'price': 84.0630000000003, 'party1': 'B20', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 411.4477611938161, 'price': 87.00200000000001, 'party1': 'B20', 'party2': 'S11', 'qty': 1}
-S11, Blotteritem, {'type': 'Trade', 'time': 426.3731343281199, 'price': 86.02600000000012, 'party1': 'B13', 'party2': 'S11', 'qty': 1}
-S12, 2
-S12, Blotteritem, {'type': 'Trade', 'time': 82.98507462686395, 'price': 86.001, 'party1': 'B26', 'party2': 'S12', 'qty': 1}
-S12, Blotteritem, {'type': 'Trade', 'time': 194.92537313435525, 'price': 87, 'party1': 'B23', 'party2': 'S12', 'qty': 1}
-S13, 13
-S13, Blotteritem, {'type': 'Trade', 'time': 22.85074626865703, 'price': 90, 'party1': 'S13', 'party2': 'B14', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 58.373134328352876, 'price': 87, 'party1': 'S13', 'party2': 'B21', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 79.44776119402722, 'price': 86.01400000000007, 'party1': 'B13', 'party2': 'S13', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 105.89552238806384, 'price': 100, 'party1': 'B23', 'party2': 'S13', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 177.19402985076863, 'price': 84, 'party1': 'B16', 'party2': 'S13', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 198.9402985074906, 'price': 88, 'party1': 'S13', 'party2': 'B25', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 232.522388059738, 'price': 92.001, 'party1': 'B20', 'party2': 'S13', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 277.7611940298574, 'price': 90, 'party1': 'S13', 'party2': 'B12', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 291.46268656714824, 'price': 87, 'party1': 'B11', 'party2': 'S13', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 326.05970149246434, 'price': 87, 'party1': 'S13', 'party2': 'B21', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 345.2985074625819, 'price': 86, 'party1': 'S13', 'party2': 'B21', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 380.7014925371504, 'price': 84.0630000000003, 'party1': 'B26', 'party2': 'S13', 'qty': 1}
-S13, Blotteritem, {'type': 'Trade', 'time': 399.0149253729411, 'price': 87, 'party1': 'S13', 'party2': 'B17', 'qty': 1}
-S14, 15
-S14, Blotteritem, {'type': 'Trade', 'time': 8.43283582089558, 'price': 88, 'party1': 'S14', 'party2': 'B15', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 54.64179104477161, 'price': 86, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 91.97014925373192, 'price': 86, 'party1': 'S14', 'party2': 'B19', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 120.04477611941074, 'price': 99.001, 'party1': 'B18', 'party2': 'S14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 131.34328358210018, 'price': 96, 'party1': 'B16', 'party2': 'S14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 189.1940298507717, 'price': 87, 'party1': 'S14', 'party2': 'B14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 191.5074626865932, 'price': 87.001, 'party1': 'B18', 'party2': 'S14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 247.76119402989116, 'price': 92, 'party1': 'S14', 'party2': 'B19', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 262.5820895522705, 'price': 94, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 294.8358208955009, 'price': 85.00700000000003, 'party1': 'B13', 'party2': 'S14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 311.6716417909955, 'price': 87, 'party1': 'B23', 'party2': 'S14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 345.52238805959644, 'price': 85.00200000000001, 'party1': 'B13', 'party2': 'S14', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 378.11940298491584, 'price': 85, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 403.58208955203804, 'price': 86, 'party1': 'S14', 'party2': 'B21', 'qty': 1}
-S14, Blotteritem, {'type': 'Trade', 'time': 440.16417910421654, 'price': 88, 'party1': 'S14', 'party2': 'B17', 'qty': 1}
-S15, 10
-S15, Blotteritem, {'type': 'Trade', 'time': 18.044776119403213, 'price': 89, 'party1': 'S15', 'party2': 'B19', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 64.94029850745635, 'price': 88, 'party1': 'S15', 'party2': 'B17', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 94.65671641791171, 'price': 88, 'party1': 'S15', 'party2': 'B23', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 124.29850746269541, 'price': 102, 'party1': 'S15', 'party2': 'B17', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 154.8208955224047, 'price': 89, 'party1': 'S15', 'party2': 'B19', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 227.67164179108005, 'price': 88, 'party1': 'S15', 'party2': 'B21', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 301.43283582086315, 'price': 88, 'party1': 'S15', 'party2': 'B19', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 334.89552238797216, 'price': 88, 'party1': 'S15', 'party2': 'B12', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 392.6567164177277, 'price': 88, 'party1': 'S15', 'party2': 'B25', 'qty': 1}
-S15, Blotteritem, {'type': 'Trade', 'time': 432.4776119400501, 'price': 88, 'party1': 'S15', 'party2': 'B12', 'qty': 1}
-S16, 9
-S16, Blotteritem, {'type': 'Trade', 'time': 19.80597014925399, 'price': 91.0, 'party1': 'S16', 'party2': 'B21', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 95.41791044776265, 'price': 91.0, 'party1': 'S16', 'party2': 'B12', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 120.86567164179901, 'price': 91, 'party1': 'B11', 'party2': 'S16', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 130.85074626866722, 'price': 96.00600000000003, 'party1': 'B18', 'party2': 'S16', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 177.44776119405228, 'price': 91.0, 'party1': 'S16', 'party2': 'B17', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 228.17910447764734, 'price': 91.0, 'party1': 'S16', 'party2': 'B12', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 240.01492537317276, 'price': 91, 'party1': 'B15', 'party2': 'S16', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 265.64179104480274, 'price': 91.0, 'party1': 'S16', 'party2': 'B15', 'qty': 1}
-S16, Blotteritem, {'type': 'Trade', 'time': 395.31343283563376, 'price': 91.0, 'party1': 'S16', 'party2': 'B14', 'qty': 1}
-S17, 0
-S18, 0
-S19, 2
-S19, Blotteritem, {'type': 'Trade', 'time': 99.23880597015169, 'price': 98, 'party1': 'S19', 'party2': 'B25', 'qty': 1}
-S19, Blotteritem, {'type': 'Trade', 'time': 235.56716417914177, 'price': 98, 'party1': 'S19', 'party2': 'B17', 'qty': 1}
-S20, 0
-S21, 0
-S22, 0
-S23, 0
-S24, 0
-S25, 0
-S26, 0
-S27, 0
-S28, 0
-S29, 0
-S30, 0
-S31, 0
-S32, 0
-S33, 0
-S34, 0
-S35, 0
-S36, 0
-S37, 0
-S38, 0
-S39, 0
+B01, 2
+B01, Blotteritem, {'type': 'Trade', 'time': 119.33333333333572, 'price': 83.0, 'party1': 'B01', 'party2': 'S01', 'qty': 1}
+B01, Blotteritem, {'type': 'Trade', 'time': 287.6666666666657, 'price': 83.0, 'party1': 'B01', 'party2': 'S01', 'qty': 1}
+B02, 10
+B02, Blotteritem, {'type': 'Trade', 'time': 30.444444444444354, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 91.88888888889049, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 120.88888888889132, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 129.66666666666933, 'price': 116.0, 'party1': 'B02', 'party2': 'S01', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 185.66666666667092, 'price': 116.0, 'party1': 'B02', 'party2': 'S01', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 211.00000000000497, 'price': 100, 'party1': 'S00', 'party2': 'B02', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 220.33333333333857, 'price': 101, 'party1': 'S00', 'party2': 'B02', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 273.44444444444673, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 276.8888888888904, 'price': 115, 'party1': 'S00', 'party2': 'B02', 'qty': 1}
+B02, Blotteritem, {'type': 'Trade', 'time': 311.2222222222159, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+B03, 13
+B03, Blotteritem, {'type': 'Trade', 'time': 16.444444444444404, 'price': 116.99599999999998, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 49.000000000000384, 'price': 79, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 99.7777777777796, 'price': 124.97099999999986, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 110.44444444444657, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 161.3333333333369, 'price': 92, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 171.11111111111495, 'price': 92, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 212.44444444444946, 'price': 100.0, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 227.11111111111654, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 271.1111111111139, 'price': 124.99599999999998, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 296.99999999999693, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 336.3333333333213, 'price': 124.99799999999999, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 362.66666666664867, 'price': 93, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+B03, Blotteritem, {'type': 'Trade', 'time': 368.22222222220296, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+S00, 12
+S00, Blotteritem, {'type': 'Trade', 'time': 30.444444444444354, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 49.000000000000384, 'price': 79, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 91.88888888889049, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 120.88888888889132, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 161.3333333333369, 'price': 92, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 171.11111111111495, 'price': 92, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 211.00000000000497, 'price': 100, 'party1': 'S00', 'party2': 'B02', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 220.33333333333857, 'price': 101, 'party1': 'S00', 'party2': 'B02', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 273.44444444444673, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 276.8888888888904, 'price': 115, 'party1': 'S00', 'party2': 'B02', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 311.2222222222159, 'price': 116.0, 'party1': 'B02', 'party2': 'S00', 'qty': 1}
+S00, Blotteritem, {'type': 'Trade', 'time': 362.66666666664867, 'price': 93, 'party1': 'S00', 'party2': 'B03', 'qty': 1}
+S01, 4
+S01, Blotteritem, {'type': 'Trade', 'time': 119.33333333333572, 'price': 83.0, 'party1': 'B01', 'party2': 'S01', 'qty': 1}
+S01, Blotteritem, {'type': 'Trade', 'time': 129.66666666666933, 'price': 116.0, 'party1': 'B02', 'party2': 'S01', 'qty': 1}
+S01, Blotteritem, {'type': 'Trade', 'time': 185.66666666667092, 'price': 116.0, 'party1': 'B02', 'party2': 'S01', 'qty': 1}
+S01, Blotteritem, {'type': 'Trade', 'time': 287.6666666666657, 'price': 83.0, 'party1': 'B01', 'party2': 'S01', 'qty': 1}
+S02, 5
+S02, Blotteritem, {'type': 'Trade', 'time': 16.444444444444404, 'price': 116.99599999999998, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+S02, Blotteritem, {'type': 'Trade', 'time': 99.7777777777796, 'price': 124.97099999999986, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+S02, Blotteritem, {'type': 'Trade', 'time': 212.44444444444946, 'price': 100.0, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+S02, Blotteritem, {'type': 'Trade', 'time': 271.1111111111139, 'price': 124.99599999999998, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+S02, Blotteritem, {'type': 'Trade', 'time': 336.3333333333213, 'price': 124.99799999999999, 'party1': 'S02', 'party2': 'B03', 'qty': 1}
+S03, 4
+S03, Blotteritem, {'type': 'Trade', 'time': 110.44444444444657, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+S03, Blotteritem, {'type': 'Trade', 'time': 227.11111111111654, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+S03, Blotteritem, {'type': 'Trade', 'time': 296.99999999999693, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+S03, Blotteritem, {'type': 'Trade', 'time': 368.22222222220296, 'price': 125.0, 'party1': 'S03', 'party2': 'B03', 'qty': 1}
+S04, 0
