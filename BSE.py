@@ -2036,11 +2036,6 @@ if __name__ == "__main__":
         [sg.Input(size=(25,1), enable_events=True, key="-TimeExploreCount-", tooltip="How accurate much would you like the agent to explore time?")],
         [sg.Text("Random mutation count")],
         [sg.Input(size=(25,1), enable_events=True, key="-RandomMutationCount-", tooltip="How many random mutations would you like to generate?")],
-
-        # [sg.Text("Input Trials")],
-        # [sg.Input(size=(25,1), enable_events=True, key="-inputTrials-", tooltip="Enter the number of Trials you want")],
-        # [sg.Text("Input Trials Recorded")],
-        # [sg.Input(size=(25,1), enable_events=True, key="-inputTrialsRecorded-", tooltip="Enter the number of Trials recorded you want")],
         [sg.Button("Done")]
 
     ]
@@ -2081,7 +2076,7 @@ if __name__ == "__main__":
     timeExploreCount = int(values['-TimeExploreCount-'])
     randomMutationCount = int(values['-RandomMutationCount-'])
     # print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
-    print(f'Input variables:\nGVWY count: {GVWY}, SHVR count: {SHVR}, ZIC count: {ZIC}, ZIP count: {ZIP}, \nGVWY Sell count: {GVWYsell}, SHVR Sell count: {SHVR}, ZIC sell count: {ZICsell}, ZIP sell count: {ZIPsell}\nEnd time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}\n')
+    print(f'Input variables:\nGVWY count: {GVWY}, SHVR count: {SHVR}, ZIC count: {ZIC}, ZIP count: {ZIP}, \nGVWY Sell count: {GVWYsell}, SHVR Sell count: {SHVRsell}, ZIC sell count: {ZICsell}, ZIP sell count: {ZIPsell}\nEnd time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}\n')
     # schedule_offsetfn returns time-dependent offset, to be added to schedule prices
     def schedule_offsetfn(t):
 
@@ -2118,7 +2113,7 @@ if __name__ == "__main__":
 
 
         # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-    for i in range(1):
+    for i in range(50):
         range1 = (50, 150)
         supply_schedule = [{'from': start_time, 'to': end_time, 'ranges': [range1], 'stepmode': 'fixed'}
                         ]
@@ -2160,7 +2155,7 @@ if __name__ == "__main__":
         higher = True
         lower = True
         initialRun = None
-        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP]
+        optimalAgentCount = [GVWY, SHVR, ZIC, ZIP, GVWYsell, SHVRsell, ZICsell, ZIPsell]
         initialAgentCount = Agent
         # while trial < (n_trials+1):
         # while trial < (5):
@@ -2384,13 +2379,11 @@ if __name__ == "__main__":
                 dump_all = True
             upperTime = end_time
             lowerTime = end_time
-            amountUpper = 25
-            amountLower = 25
+            amountUpper = 5
+            amountLower = 5
                 # explore reducing
             if lowerTime > 0 and lessTime:
                 lowerTime -= amountLower
-                # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-
                 range1 = (50, 150)
                 supply_schedule = [{'from': start_time, 'to': lowerTime, 'ranges': [range1], 'stepmode': 'fixed'}
                                 ]
@@ -2401,8 +2394,6 @@ if __name__ == "__main__":
 
                 order_sched = {'sup': supply_schedule, 'dem': demand_schedule,
                             'interval': 30, 'timemode': 'drip-poisson'}
-                # Use 'periodic' if you want the traders' assignments to all arrive simultaneously & periodically
-                #               'interval': 30, 'timemode': 'periodic'}
                 buyers_spec = [('GVWY',optimalAgentCount[0]),('SHVR',optimalAgentCount[1]),('ZIC',optimalAgentCount[2]),('ZIP',optimalAgentCount[3])]
                 sellers_spec = [('GVWY',optimalAgentCount[4]),('SHVR',optimalAgentCount[5]),('ZIC',optimalAgentCount[6]),('ZIP',optimalAgentCount[7])]
                 traders_spec = {'sellers':sellers_spec, 'buyers':buyers_spec}
@@ -2412,16 +2403,13 @@ if __name__ == "__main__":
                 if not trialRun[1] > highestRun:
                     lowerTime += amountLower
                     amountLower = amountLower / 2
-                    # print()
                 else:
                     highestRun = trialRun[1]
                     optimalTime = lowerTime
 
-
+            #explore increasing
             if moreTime:
                 upperTime += amountUpper
-                # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-
                 range1 = (50, 150)
                 supply_schedule = [{'from': start_time, 'to': upperTime, 'ranges': [range1], 'stepmode': 'fixed'}
                                 ]
@@ -2441,8 +2429,6 @@ if __name__ == "__main__":
                 if not trialRun[1] > highestRun:
                     upperTime -= amountUpper
                     amountUpper = amountUpper / 2
-                    # print()
-                    # continue
                 else:
                     highestRun = trialRun[1]
                     optimalTime = upperTime
@@ -2505,6 +2491,9 @@ if __name__ == "__main__":
         print(f'Initial run: {initialRun}, Local Search highest: {highestRun}, Random Search highest: {geneticHighestRun}')
         print(f'Local search Configuration:\nBuy GVWY count: {optimalAgentCount[0]}, Buy SHVR count: {optimalAgentCount[1]}, Buy ZIC count: {optimalAgentCount[2]}, Buy ZIP count: {optimalAgentCount[3]}\nSell GVWY count: {optimalAgentCount[4]}, Sell SHVR count: {optimalAgentCount[5]}, Sell ZIC count: {optimalAgentCount[6]}, Sell ZIP count: {optimalAgentCount[7]}\nEnd time: {optimalTime}\n')
         print(f'Random Search Configuration: \n{geneticOutputs}')
+
+        # print(f'{initialRun},{highestRun},{geneticHighestRun}')
+
         tdump.close()
 
     
