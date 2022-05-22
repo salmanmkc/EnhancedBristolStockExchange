@@ -2076,7 +2076,7 @@ if __name__ == "__main__":
     timeExploreCount = int(values['-TimeExploreCount-'])
     randomMutationCount = int(values['-RandomMutationCount-'])
     # print(f'Input variables:\nNumber of agent per type: {Agent}, end time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}')
-    print(f'Input variables:\nGVWY count: {GVWY}, SHVR count: {SHVR}, ZIC count: {ZIC}, ZIP count: {ZIP}, \nGVWY Sell count: {GVWYsell}, SHVR Sell count: {SHVRsell}, ZIC sell count: {ZICsell}, ZIP sell count: {ZIPsell}\nEnd time: {end_time}, Agent Explore Count: {agentExploreCount}, Time Explore Count: {timeExploreCount}, Random Mutation Count: {randomMutationCount}\n')
+    print(f'Input variables:\nGVWY count: {GVWY}, SHVR count: {SHVR}, ZIC count: {ZIC}, ZIP count: {ZIP}, \nGVWY Sell count: {GVWYsell}, SHVR Sell count: {SHVRsell}, ZIC sell count: {ZICsell}, ZIP sell count: {ZIPsell}\nEnd time: {end_time}, Agent Explore Radius: {agentExploreCount}, Time Explore Radius: {timeExploreCount}, Random Mutation Count: {randomMutationCount}\n')
     # schedule_offsetfn returns time-dependent offset, to be added to schedule prices
     def schedule_offsetfn(t):
 
@@ -2113,7 +2113,7 @@ if __name__ == "__main__":
 
 
         # The code below sets up symmetric supply and demand curves at prices from 50 to 150, P0=100
-    for i in range(50):
+    for i in range(1):
         range1 = (50, 150)
         supply_schedule = [{'from': start_time, 'to': end_time, 'ranges': [range1], 'stepmode': 'fixed'}
                         ]
